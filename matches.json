@@ -11,8 +11,8 @@
   ],
   "cricket": [
     { "teams": "WELLINGTON W VS AUCKLAND W", "tip": "WELLINGTON WIN", "status": "finished", "load": "00%", "info": "Sure Shot" },
-    { "teams": "", "tip": "RENEGADES VS HOBART", "tip": "HOBART WIN", "status": "14:00", "load": "live", "info": "Premium" },
-    { "teams": "MATCH CONIMG (T20)", "tip": "WITING", "status": "00:00", "load": "Jackpot Match", "info": "" }
+    { "teams": "RENEGADES VS HOBART", "tip": "HOBART WIN", "status": "14:00", "load": "live", "info": "Premium" },
+    { "teams": "Rajshahi Warriors vs Sylhet Titans", "tip": "Rajshahi Warriors WIN", "status": "17:00", "load": "Jackpot Match", "info": "" }
   ],
   "tennis": [
     { "teams": "Dedura .D vs Bennani .R", "tip": "Dedura .D", "status": "15:00", "time": "" },
@@ -21,3 +21,4 @@
   ]
 
 }
+
