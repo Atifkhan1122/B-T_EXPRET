@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BT EXPERT | Smart VIP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --brand: #00e676; --dark: #0a0a0a; --bg: #111111; --card-bg: #1e1e1e; --white: #ffffff; --whatsapp: #25d366; --free-color: #ffeb3b; --gold: #ffd700; }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body { margin: 0; font-family: 'Roboto', sans-serif; background-color: var(--bg); color: var(--white); overflow-x: hidden; touch-action: pan-y; }
+        nav { background: var(--dark); padding: 12px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 2000; border-bottom: 1px solid #222; }
+        .logo-container { display: flex; align-items: center; gap: 10px; }
+        .bt-logo-box { background: #000; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border-radius: 8px; border: 2px solid var(--brand); }
+        .bt-text { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 20px; color: var(--brand); }
+        .logo-brand-name { font-size: 18px; font-weight: 900; color: var(--brand); }
+        #vipStatus { font-size: 10px; font-weight: bold; color: #ff5252; border: 1px solid #ff5252; padding: 5px 12px; border-radius: 20px; cursor: pointer; }
+        .live-dot { height: 8px; width: 8px; background-color: #ff5252; border-radius: 50%; display: inline-block; margin-right: 5px; animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+        .menu-bar { background: #000; display: flex; justify-content: space-around; position: sticky; top: 66px; z-index: 1999; border-bottom: 2px solid var(--brand); }
+        .nav-item { flex: 1; text-align: center; color: #666; padding: 12px 0; font-size: 10px; font-weight: 900; cursor: pointer; text-transform: uppercase; }
+        .nav-item i { display: block; font-size: 18px; margin-bottom: 4px; }
+        .nav-item.active { color: var(--brand); background: rgba(0,230,118,0.1); border-bottom: 2px solid var(--brand); }
+        .nav-item:nth-child(3).active { color: var(--gold); border-bottom-color: var(--gold); }
+        .container { max-width: 600px; margin: 0 auto; padding: 15px; }
+        .broadcast-card { background: #075E54; border-radius: 12px; border: 1px solid #128C7E; margin-bottom: 20px; overflow: hidden; }
+        .bc-header { background: #128C7E; padding: 10px 15px; display: flex; justify-content: space-between; font-size: 10px; font-weight: 900; color: #fff; }
+        .wa-chat-body { padding: 20px; text-align: center; }
+        .wa-chat-body p { font-size: 14px; line-height: 1.6; margin-bottom: 15px; font-weight: 700; color: #fff; }
+        .match-card { background: var(--card-bg); border-radius: 12px; padding: 12px; display: grid; grid-template-columns: 70px 1fr 80px; align-items: center; margin-bottom: 12px; border: 1px solid #333; position: relative; }
+        .cricket-card { border: 1px solid var(--gold); background: linear-gradient(145deg, #1e1e1e, #111); }
+        .cricket-card::after { content: 'VVIP'; position: absolute; top: -8px; right: 10px; background: var(--gold); color: #000; font-size: 7px; font-weight: 900; padding: 2px 5px; border-radius: 4px; }
+        .m-time { color: var(--brand); font-weight: bold; font-size: 10px; }
+        .m-teams { font-weight: 700; font-size: 14px; color: #fff; }
+        .odds-row { display: flex; gap: 5px; margin-top: 6px; }
+        .odd-box { background: #2a2a2a; font-size: 9px; padding: 2px 6px; border-radius: 4px; color: var(--brand); border: 1px solid #444; }
+        .tip-btn { background: #2a2a2a; color: var(--brand); font-size: 10px; font-weight: 900; padding: 10px 5px; border-radius: 8px; text-align: center; cursor: pointer; border: 1px solid #444; }
+        .window-content { display: none; }
+        .window-content.active { display: block; animation: fadeIn 0.3s ease; }
+        .modal { display: none; position: fixed; z-index: 5000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); backdrop-filter: blur(10px); }
+        .modal-content { background: #1a1a1a; border: 1px solid var(--brand); width: 85%; max-width: 350px; margin: 30% auto; padding: 25px; border-radius: 20px; text-align: center; }
+        .btn-pro { background: var(--brand); color: black; border: none; width: 100%; padding: 15px; border-radius: 50px; font-weight: 900; cursor: pointer; }
+        .whatsapp-float { position: fixed; bottom: 25px; right: 20px; background: var(--whatsapp); color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 4000; }
+        .live-score-btn { background: linear-gradient(90deg, #1a237e, #0d47a1); color: white; border: none; width: 100%; padding: 15px; border-radius: 12px; font-weight: 900; font-size: 14px; margin-top: 10px; margin-bottom: 30px; cursor: pointer; text-transform: uppercase; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body id="swipeContainer">
+
+    <div id="loginModal" class="modal"><div class="modal-content"><h2 style="color:var(--brand);">VIP ACCESS</h2><input type="password" id="vipCode" style="width:100%; padding:15px; margin:15px 0; border-radius:50px; border:1px solid #444; background:#000; color:white; text-align:center;" placeholder="••••••"><button onclick="verifyLogin()" class="btn-pro">UNLOCK NOW</button></div></div>
+    <div id="tipModal" class="modal"><div class="modal-content"><h3 id="popTeams"></h3><div id="popTip" style="font-size: 26px; color: var(--brand); font-weight: 900; margin: 20px 0; padding: 15px; border: 2px dashed var(--brand);">LOCKED</div><button class="btn-pro" onclick="closeModal('tipModal')">CLOSE</button></div></div>
+
+    <nav>
+        <div class="logo-container"><div class="bt-logo-box"><span class="bt-text">BT</span></div><span class="logo-brand-name">EXPERT</span></div>
+        <div id="vipStatus" onclick="openModal('loginModal')">VIP LOCKED</div>
+    </nav>
+
+    <div class="container">
+        <div class="broadcast-card">
+            <div class="bc-header"><span>OFFICIAL FEED</span><span>ONLINE</span></div>
+            <div class="wa-chat-body">
+                <p>VIP membership and cricket live sessions and matches join our WhatsApp channel and Telegram</p>
+                <a href="https://wa.me/+923103403254" target="_blank"><button class="btn-pro" style="background:#25d366; color:white; width:auto; padding:10px 25px; font-size:12px;"><i class="fab fa-whatsapp"></i> JOIN NOW</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-bar">
+        <div class="nav-item active" onclick="openWindow('freetips', 0)"><i class="fas fa-bolt"></i>Free</div>
+        <div class="nav-item" onclick="openWindow('football', 1)"><i class="fas fa-futbol"></i>Football</div>
+        <div class="nav-item" onclick="openWindow('cricket', 2)"><i class="fas fa-baseball-bat-ball"></i>Cricket</div>
+        <div class="nav-item" onclick="openWindow('tennis', 3)"><i class="fas fa-table-tennis-paddle-ball"></i>Tennis</div>
+    </div>
+
+    <div class="container" id="mainArea">
+        <div id="freetips" class="window-content active">Loading Free Tips...</div>
+        <div id="football" class="window-content">Loading Football...</div>
+        <div id="cricket" class="window-content">Loading Cricket...</div>
+        <div id="tennis" class="window-content">Loading Tennis...</div>
+    </div>
+
+    <a href="https://wa.me/+923103403254" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <script>
+        let isVip = false;
+        let currentIdx = 0;
+        const wins = ['freetips', 'football', 'cricket', 'tennis'];
+
+        async function loadMatches() {
+            try {
+                const res = await fetch('matches.json');
+                const data = await res.json();
+                
+                // Load Free Tips
+                document.getElementById('freetips').innerHTML = data.freetips.map(m => `
+                    <div class="match-card" onclick="showFreeTip('${m.teams}', '${m.tip}')">
+                        <div class="m-time"><span class="live-dot"></span>${m.status}</div>
+                        <div class="m-info"><div class="m-teams">${m.teams}</div></div>
+                        <div class="tip-btn" style="color:var(--free-color);">OPEN</div>
+                    </div>`).join('');
+
+                // Load Football
+                document.getElementById('football').innerHTML = data.football.map(m => `
+                    <div class="match-card" onclick="handleMatchClick('${m.teams}', '${m.tip}')">
+                        <div class="m-time">${m.status}</div>
+                        <div class="m-info"><div class="m-teams">${m.teams}</div></div>
+                        <div class="tip-btn">VIEW VIP</div>
+                    </div>`).join('');
+
+                // Load Cricket
+                document.getElementById('cricket').innerHTML = data.cricket.map(m => `
+                    <div class="match-card cricket-card" onclick="handleMatchClick('${m.teams}', '${m.tip}')">
+                        <div class="m-time" style="color:var(--gold);">${m.status}</div>
+                        <div class="m-info">
+                            <div class="m-teams">${m.teams}</div>
+                            <div class="odds-row">${m.load ? `<span class="odd-box">${m.load}</span>` : ''}${m.info ? `<span class="odd-box">${m.info}</span>` : ''}</div>
+                        </div>
+                        <div class="tip-btn" style="border-color:var(--gold); color:var(--gold);">VIEW VVIP</div>
+                    </div>`).join('') + '<button class="live-score-btn" onclick="window.open(\'https://www.cricbuzz.com/\', \'_blank\')">Live Cricket Score</button>';
+
+                // Load Tennis
+                document.getElementById('tennis').innerHTML = data.tennis.map(m => `
+                    <div class="match-card" onclick="handleMatchClick('${m.teams}', '${m.tip}')">
+                        <div class="m-time">${m.status}</div>
+                        <div class="m-info"><div class="m-teams">${m.teams}</div></div>
+                        <div class="tip-btn">VIEW VIP</div>
+                    </div>`).join('');
+
+            } catch (e) { console.error(e); }
+        }
+
+        function openWindow(id, idx) {
+            currentIdx = idx;
+            document.querySelectorAll('.window-content').forEach(w => w.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            document.querySelectorAll('.nav-item')[idx].classList.add('active');
+            window.scrollTo(0,0);
+        }
+
+        let startX = 0;
+        document.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, false);
+        document.addEventListener('touchend', e => {
+            let endX = e.changedTouches[0].clientX;
+            if (startX - endX > 80) { if (currentIdx < 3) openWindow(wins[currentIdx + 1], currentIdx + 1); }
+            else if (endX - startX > 80) { if (currentIdx > 0) openWindow(wins[currentIdx - 1], currentIdx - 1); }
+        }, false);
+
+        function openModal(id) { document.getElementById(id).style.display = 'block'; }
+        function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+        function showFreeTip(t, tip) { document.getElementById('popTeams').innerText = t; document.getElementById('popTip').innerText = tip; openModal('tipModal'); }
+        function handleMatchClick(t, tip) { if(!isVip) openModal('loginModal'); else showFreeTip(t, tip); }
+        function verifyLogin() {
+            if(document.getElementById('vipCode').value === "BT786") {
+                isVip = true; document.getElementById('vipStatus').innerText = "UNLOCKED";
+                document.getElementById('vipStatus').style.color = "var(--brand)"; closeModal('loginModal');
+            } else { alert("Incorrect VIP Code!"); }
+        }
+        window.onload = loadMatches;
+    </script>
+</body>
+</html>
