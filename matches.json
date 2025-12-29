@@ -1,22 +1,23 @@
 {
   "freetips": [
-    { "teams": "Cricket Free", "tip": "INDIA WIN", "status": "LIVE", "time": "" },
-    { "teams": "Football Free", "tip": "OVER 1.5", "status": "FREE", "time": "" }
+    { "teams": "Cricket Free", "tip": "HOBART WIN", "status": "LIVE", "time": "" },
+    { "teams": "Football Free", "tip": "ROMA WIN", "status": "FREE", "time": "" }
   ],
   "football": [
-    { "teams": "Chelsea vs Man City", "tip": "AWAY WIN", "status": "LIVE", "time": "" },
-    { "teams": "Real Madrid vs Barca", "tip": "HOME WIN", "status": "21:00", "time": "" },
-    { "teams": "Milan vs Inter", "tip": "DRAW", "status": "23:30", "time": "" },
-    { "teams": "PSG vs Lyon", "tip": "HOME WIN", "status": "00:00", "time": "" }
+    { "teams": "PORTO VS AFS", "tip": "PORTO-1.5 WIN", "status": "LIVE", "time": "" },
+    { "teams": "AL TAAWON VS AL NAJMA", "tip": "AL TAAWON WIN", "status": "20:30", "time": "" },
+    { "teams": "BREOGAN VS BASKONIA", "tip": "BASKONIA WIN", "status": "23:30", "time": "" },
+    { "teams": "TRIESTE VS V.BOLOGNA", "tip": "V.BOLOGNA WIN", "status": "00:00", "time": "" }
   ],
   "cricket": [
-    { "teams": "PAKistan vs AUStralia", "tip": "PAKISTAN WIN", "status": "LIVE", "load": "70%", "info": "Sure Shot" },
-    { "teams": "INDia vs ENGland", "tip": "INDIA WIN", "status": "14:00", "load": "Session Tip", "info": "Premium" },
-    { "teams": "MI vs CSK (T20)", "tip": "CSK WIN", "status": "19:30", "load": "Jackpot Match", "info": "" }
+    { "teams": "WELLINGTON W VS AUCKLAND W", "tip": "WELLINGTON WIN", "status": "finished", "load": "00%", "info": "Sure Shot" },
+    { "teams": "", "tip": "RENEGADES VS HOBART", "tip": "HOBART WIN", "status": "14:00", "load": "live", "info": "Premium" },
+    { "teams": "MATCH CONIMG (T20)", "tip": "WITING", "status": "00:00", "load": "Jackpot Match", "info": "" }
   ],
   "tennis": [
-    { "teams": "Djokovic vs Nadal", "tip": "DJOKOVIC", "status": "15:00", "time": "" },
+    { "teams": "Dedura .D vs Bennani .R", "tip": "Dedura .D", "status": "15:00", "time": "" },
     { "teams": "Federer vs Murray", "tip": "FEDERER", "status": "17:00", "time": "" },
     { "teams": "Zverev vs Thiem", "tip": "ZVEREV", "status": "20:00", "time": "" }
   ]
+
 }
