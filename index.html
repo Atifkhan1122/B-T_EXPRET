@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>BT EXPERT | Premium VIP</title>
+    <title>BT EXPERT | VIP Portal</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -35,27 +35,52 @@
         .tag { font-size: 8px; background: rgba(255,215,0,0.1); color: var(--gold); padding: 3px 8px; border-radius: 6px; border: 0.5px solid var(--dark-gold); font-weight: bold; margin-right: 5px; }
 
         /* Buttons & Results */
-        .tip-btn { background: linear-gradient(180deg, var(--gold), var(--dark-gold)); color: #000; font-weight: 800; font-size: 10px; padding: 12px 5px; border-radius: 10px; text-align: center; border: 1px solid #fff; cursor: pointer; }
+        .tip-btn { background: linear-gradient(180deg, var(--gold), var(--dark-gold)); color: #000; font-weight: 800; font-size: 10px; padding: 12px 5px; border-radius: 10px; text-align: center; border: 1px solid #fff; cursor: pointer; text-transform: uppercase; }
         .res-win { border-left: 5px solid var(--win); background: linear-gradient(90deg, rgba(0,230,118,0.05), var(--card-bg)); }
         .res-loss { border-left: 5px solid var(--loss); background: linear-gradient(90deg, rgba(255,82,82,0.05), var(--card-bg)); }
         .badge { font-size: 9px; font-weight: 900; padding: 6px; border-radius: 6px; text-align: center; }
         .bg-win { background: var(--win); color: #000; }
         .bg-loss { background: var(--loss); color: #fff; }
 
+        /* Modals */
+        .modal { display: none; position: fixed; z-index: 5000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); backdrop-filter: blur(8px); }
+        .modal-content { background: #1a1a1a; border: 2px solid var(--gold); width: 88%; max-width: 360px; margin: 25% auto; padding: 30px; border-radius: 25px; text-align: center; animation: modalPop 0.3s ease-out; }
+        @keyframes modalPop { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+        .whatsapp-float { position: fixed; bottom: 25px; right: 20px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; color: white; z-index: 4000; }
+        
         .window-content { display: none; }
         .window-content.active { display: block; animation: fadeInUp 0.4s ease-out; }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* Modal */
-        .modal { display: none; position: fixed; z-index: 5000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); backdrop-filter: blur(8px); }
-        .modal-content { background: #1a1a1a; border: 2px solid var(--gold); width: 88%; max-width: 360px; margin: 25% auto; padding: 30px; border-radius: 25px; text-align: center; }
-        .whatsapp-float { position: fixed; bottom: 25px; right: 20px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; color: white; z-index: 4000; }
     </style>
 </head>
 <body>
 
-    <div id="loginModal" class="modal"><div class="modal-content"><h3 style="color:var(--gold)">VIP UNLOCK</h3><p style="color:#888; font-size:12px;">Enter current PIN from Admin</p><input type="password" id="vipCode" style="width:100%; padding:15px; margin:20px 0; border-radius:12px; background:#000; border:1px solid #444; color:#fff; text-align:center; font-size:18px;" placeholder="••••••"><button onclick="verifyLogin()" class="tip-btn" style="width:100%">ACCESS VIP</button></div></div>
-    <div id="tipModal" class="modal"><div class="modal-content"><h4 id="popTeams" style="color:#fff; margin-bottom:15px;"></h4><div id="popTip" style="font-size: 26px; color: var(--gold); font-weight: 800; margin: 20px 0; padding: 20px; border: 2px dashed var(--gold); border-radius: 15px; background: rgba(255,215,0,0.05);">LOCKED</div><button onclick="closeModal('tipModal')" class="tip-btn" style="width:100%; background:#333; color:#fff; border-color:#555;">CLOSE</button></div></div>
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h3 style="color:var(--gold)">VIP UNLOCK</h3>
+            <p style="color:#888; font-size:12px;">Enter current PIN from Admin</p>
+            <input type="password" id="vipCode" style="width:100%; padding:15px; margin:20px 0; border-radius:12px; background:#000; border:1px solid #444; color:#fff; text-align:center; font-size:18px;" placeholder="••••••">
+            <button onclick="verifyLogin()" class="tip-btn" style="width:100%">ACCESS VIP</button>
+        </div>
+    </div>
+
+    <div id="errorModal" class="modal">
+        <div class="modal-content" style="border-color: var(--loss);">
+            <i class="fas fa-times-circle" style="font-size: 50px; color: var(--loss); margin-bottom: 15px;"></i>
+            <h3 style="color:var(--loss); margin:0;">ACCESS DENIED</h3>
+            <p style="color:#ccc; font-size:13px; margin: 15px 0;">Ghalat Pin Code! Naya pin hasil karne ke liye Admin se raabta karein.</p>
+            <button onclick="closeModal('errorModal')" class="tip-btn" style="width:100%; background:var(--loss); color:#fff; border:none;">TRY AGAIN</button>
+        </div>
+    </div>
+
+    <div id="tipModal" class="modal">
+        <div class="modal-content">
+            <h4 id="popTeams" style="color:#fff; margin-bottom:15px;"></h4>
+            <div id="popTip" style="font-size: 26px; color: var(--gold); font-weight: 800; margin: 20px 0; padding: 20px; border: 2px dashed var(--gold); border-radius: 15px; background: rgba(255,215,0,0.05);">LOCKED</div>
+            <button onclick="closeModal('tipModal')" class="tip-btn" style="width:100%; background:#333; color:#fff; border-color:#555;">CLOSE</button>
+        </div>
+    </div>
 
     <nav><div class="logo">BT EXPERT</div><div id="vipStatus" style="font-size:10px; color:#ff5252; font-weight:900; border:1.5px solid #ff5252; padding:5px 12px; border-radius:20px;" onclick="openModal('loginModal')">VIP LOCKED</div></nav>
 
@@ -80,15 +105,13 @@
     <script>
         let isVip = false;
         let currentIdx = 0;
-        let correctVipPin = ""; // This will be loaded from JSON
+        let correctVipPin = ""; 
         const sections = ['freetips', 'football', 'cricket', 'tennis', 'results'];
 
         async function loadData() {
             try {
                 const res = await fetch('matches.json');
                 const data = await res.json();
-                
-                // Set the VIP PIN from JSON
                 correctVipPin = data.vip_config.current_pin;
                 
                 const render = (m, isFree) => `
@@ -117,6 +140,21 @@
             } catch (e) { console.error("JSON Error"); }
         }
 
+        function verifyLogin() { 
+            let inputPin = document.getElementById('vipCode').value;
+            if(inputPin === correctVipPin) { 
+                isVip = true; 
+                document.getElementById('vipStatus').innerHTML = '<i class="fas fa-check-circle"></i> UNLOCKED'; 
+                document.getElementById('vipStatus').style.color = "var(--gold)"; 
+                document.getElementById('vipStatus').style.borderColor = "var(--gold)"; 
+                closeModal('loginModal'); 
+            } else { 
+                closeModal('loginModal'); 
+                openModal('errorModal'); 
+                document.getElementById('vipCode').value = ""; 
+            } 
+        }
+
         function openWindow(id, idx, push = true) {
             currentIdx = idx;
             document.querySelectorAll('.window-content').forEach(w => w.classList.remove('active'));
@@ -141,17 +179,6 @@
         function closeModal(id) { document.getElementById(id).style.display = 'none'; }
         function showTip(t, p) { document.getElementById('popTeams').innerText = t; document.getElementById('popTip').innerText = p; openModal('tipModal'); }
         function handleVip(t, p) { if(isVip) showTip(t, p); else openModal('loginModal'); }
-        
-        function verifyLogin() { 
-            let inputPin = document.getElementById('vipCode').value;
-            if(inputPin === correctVipPin) { 
-                isVip = true; 
-                document.getElementById('vipStatus').innerHTML = '<i class="fas fa-check-circle"></i> UNLOCKED'; 
-                document.getElementById('vipStatus').style.color = "var(--gold)"; 
-                document.getElementById('vipStatus').style.borderColor = "var(--gold)"; 
-                closeModal('loginModal'); 
-            } else { alert("Ghalat Pin Code! Naya pin hasil karein."); } 
-        }
         
         window.onload = () => { history.replaceState({id:'freetips', idx:0}, ""); loadData(); };
     </script>
