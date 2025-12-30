@@ -1,26 +1,96 @@
 {
+  "vip_config": {
+    "current_pin": "990011"
+  },
   "freetips": [
-    { "teams": "Cricket Free", "tip": "HOBART WIN", "status": "LIVE" },
-    { "teams": "Football Free", "tip": "ROMA WIN", "status": "FREE" }
+    {
+      "status": "LIVE",
+      "teams": "Cricket Free Match",
+      "tip": "HOBART WIN"
+    },
+    {
+      "status": "FREE",
+      "teams": "Football Free Match",
+      "tip": "ROMA WIN"
+    }
   ],
   "football": [
-    { "teams": "PORTO VS AFS", "tip": "PORTO-1.5 WIN", "status": "LIVE" },
-    { "teams": "AL TAAWON VS AL NAJMA", "tip": "AL TAAWON WIN", "status": "20:30" },
-    { "teams": "BREOGAN VS BASKONIA", "tip": "BASKONIA WIN", "status": "23:30" },
-    { "teams": "TRIESTE VS V.BOLOGNA", "tip": "V.BOLOGNA WIN", "status": "00:00" }
+    {
+      "status": "LIVE",
+      "teams": "PORTO VS AFS",
+      "tip": "PORTO-1.5 WIN",
+      "load": "90%",
+      "info": "Safe"
+    },
+    {
+      "status": "20:30",
+      "teams": "AL TAAWON VS AL NAJMA",
+      "tip": "AL TAAWON WIN",
+      "load": "75%",
+      "info": "Premium"
+    },
+    {
+      "status": "23:30",
+      "teams": "BREOGAN VS BASKONIA",
+      "tip": "BASKONIA WIN",
+      "load": "High",
+      "info": "VIP"
+    }
   ],
   "cricket": [
-    { "teams": "WELLINGTON W VS AUCKLAND W", "tip": "WELLINGTON WIN", "status": "finished", "load": "00%", "info": "Sure Shot" },
-    { "teams": "RENEGADES VS HOBART", "tip": "HOBART WIN", "status": "14:00", "load": "live", "info": "Premium" },
-    { "teams": "Rajshahi Warriors vs Sylhet Titans", "tip": "Rajshahi Warriors WIN", "status": "17:00", "load": "Jackpot", "info": "VIP" }
+    {
+      "status": "FINISHED",
+      "teams": "WELLINGTON W VS AUCKLAND W",
+      "tip": "WELLINGTON WIN",
+      "load": "100%",
+      "info": "Sure Shot"
+    },
+    {
+      "status": "14:00",
+      "teams": "RENEGADES VS HOBART",
+      "tip": "HOBART WIN",
+      "load": "Live",
+      "info": "Premium"
+    },
+    {
+      "status": "17:00",
+      "teams": "Rajshahi vs Sylhet",
+      "tip": "Rajshahi WIN",
+      "load": "Jackpot",
+      "info": "Golden"
+    }
   ],
   "tennis": [
-    { "teams": "Dedura .D vs Bennani .R", "tip": "Dedura .D", "status": "15:00" },
-    { "teams": "Federer vs Murray", "tip": "FEDERER", "status": "17:00" },
-    { "teams": "Zverev vs Thiem", "tip": "ZVEREV", "status": "20:00" }
+    {
+      "status": "15:00",
+      "teams": "Dedura .D vs Bennani .R",
+      "tip": "Dedura .D",
+      "load": "Low",
+      "info": "Single"
+    },
+    {
+      "status": "17:00",
+      "teams": "Federer vs Murray",
+      "tip": "FEDERER",
+      "load": "High",
+      "info": "VVIP"
+    }
   ],
   "results": [
-    { "teams": "India vs Pakistan", "tip": "India Win", "outcome": "win" },
-    { "teams": "Arsenal vs Chelsea", "tip": "Over 2.5 Goals", "outcome": "loss" }
+    {
+      "teams": "India vs Pakistan",
+      "tip": "India Win",
+      "outcome": "win"
+    },
+    {
+      "teams": "Arsenal vs Chelsea",
+      "tip": "Over 2.5 Goals",
+      "outcome": "loss"
+    },
+    {
+      "teams": "Real Madrid vs Man City",
+      "tip": "Real Madrid Win",
+      "outcome": "win"
+    }
   ]
 }
