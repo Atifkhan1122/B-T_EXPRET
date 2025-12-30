@@ -18,7 +18,25 @@
     { "teams": "Dedura .D vs Bennani .R", "tip": "Dedura .D", "status": "15:00", "time": "" },
     { "teams": "Federer vs Murray", "tip": "FEDERER", "status": "17:00", "time": "" },
     { "teams": "Zverev vs Thiem", "tip": "ZVEREV", "status": "20:00", "time": "" }
+  ],
+  {
+  "freetips": [],
+  "football": [],
+  "cricket": [],
+  "results": [
+    {
+      "teams": "India vs Pakistan",
+      "tip": "India Win",
+      "outcome": "win"
+    },
+    {
+      "teams": "Arsenal vs Chelsea",
+      "tip": "Over 2.5 Goals",
+      "outcome": "loss"
+    }
   ]
-
 }
+
+
+
 
