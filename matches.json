@@ -17,21 +17,21 @@
   "football": [
     {
       "status": "LIVE",
-      "teams": "SLAVIA PTAGUE  VS  BARCELONNA",
+      "teams": "SLAVIA PRAGUE VS BARCELONA",
       "tip": "BARCELONA WIN",
       "load": "90%",
       "info": "Safe"
     },
     {
       "status": "20:30",
-      "teams": "BAYERN  VS  ROYALE UNION",
-      "tip": "BAYERN -!,5 WINS",
+      "teams": "BAYERN VS ROYALE UNION",
+      "tip": "BAYERN -1.5 WINS",
       "load": "75%",
       "info": "Premium"
     },
     {
       "status": "23:30",
-      "teams": "ATALANTA  VS  ATH BILBAO",
+      "teams": "ATALANTA VS ATH BILBAO",
       "tip": "ATALANTA WIN OR DRAW",
       "load": "High",
       "info": "VIP"
@@ -40,8 +40,8 @@
   "cricket": [
     {
       "status": "06:30",
-      "teams": "FGHANISTAN  VS  WEST INDIES",
-      "tip": "FGHANISTAN
+      "teams": "AFGHANISTAN VS WEST INDIES",
+      "tip": "AFGHANISTAN WIN",
       "load": "100%",
       "info": "Sure Shot"
     },
