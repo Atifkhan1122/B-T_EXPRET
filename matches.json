@@ -1,47 +1,47 @@
 {
   "vip_config": {
-    "current_pin": "990011"
+    "current_pin": "000000"
   },
   "freetips": [
     {
       "status": "LIVE",
       "teams": "Cricket Free Match",
-      "tip": "HOBART WIN"
+      "tip": "INDIA WIN"
     },
     {
       "status": "FREE",
       "teams": "Football Free Match",
-      "tip": "ROMA WIN"
+      "tip": "CHELSEA WIN"
     }
   ],
   "football": [
     {
       "status": "LIVE",
-      "teams": "PORTO VS AFS",
-      "tip": "PORTO-1.5 WIN",
+      "teams": "SLAVIA PTAGUE  VS  BARCELONNA",
+      "tip": "BARCELONA WIN",
       "load": "90%",
       "info": "Safe"
     },
     {
       "status": "20:30",
-      "teams": "AL TAAWON VS AL NAJMA",
-      "tip": "AL TAAWON WIN",
+      "teams": "BAYERN  VS  ROYALE UNION",
+      "tip": "BAYERN -!,5 WINS",
       "load": "75%",
       "info": "Premium"
     },
     {
       "status": "23:30",
-      "teams": "BREOGAN VS BASKONIA",
-      "tip": "BASKONIA WIN",
+      "teams": "ATALANTA  VS  ATH BILBAO",
+      "tip": "ATALANTA WIN OR DRAW",
       "load": "High",
       "info": "VIP"
     }
   ],
   "cricket": [
     {
-      "status": "FINISHED",
-      "teams": "WELLINGTON W VS AUCKLAND W",
-      "tip": "WELLINGTON WIN",
+      "status": "06:30",
+      "teams": "FGHANISTAN  VS  WEST INDIES",
+      "tip": "FGHANISTAN
       "load": "100%",
       "info": "Sure Shot"
     },
