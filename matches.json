@@ -4,21 +4,21 @@
   },
   "freetips": [
     {
-      "status": "LIVE",
-      "teams": "Cricket Free Match",
-      "tip": "INDIA WIN"
+       "status": "3:00.pm",
+      "teams": "ENG VS PAK",
+      "tip": "ENGLAND WIN"
     },
     {
       "status": "FREE",
       "teams": "Football Free Match",
-      "tip": "CHELSEA WIN"
+      "tip": "FARM WIN"
     }
   ],
   "football": [
     {
       "status": "LIVE",
-      "teams": "SLAVIA PRAGUE VS BARCELONA",
-      "tip": "BARCELONA WIN",
+      "teams": "CAGLIARI VS INTER ",
+      "tip": "INTER WIN",
       "load": "90%",
       "info": "Safe"
     },
@@ -31,17 +31,17 @@
     },
     {
       "status": "23:30",
-      "teams": "ATALANTA VS ATH BILBAO",
-      "tip": "ATALANTA WIN OR DRAW",
+      "teams": "FARM vs AKUREYRI",
+      "tip": "FARM WIN OR DRAW",
       "load": "High",
       "info": "VIP"
     }
   ],
   "cricket": [
     {
-      "status": "06:30",
-      "teams": "AFGHANISTAN VS WEST INDIES",
-      "tip": "AFGHANISTAN WIN",
+      "status": "31 Aug 2026, 04:00 am",
+      "teams": "St Kitts & Nevis Patriots vs Antigua & Barbuda Falcons",
+      "tip": "St Kitts & Nevis Patriots WIN",
       "load": "100%",
       "info": "Sure Shot"
     },
@@ -78,13 +78,13 @@
   ],
   "results": [
     {
-      "teams": "India vs Pakistan",
+      "teams": "India vs ",
       "tip": "India Win",
       "outcome": "win"
     },
     {
-      "teams": "Arsenal vs Chelsea",
-      "tip": "Over 2.5 Goals",
+      "teams": "TELSTAR vs AJAX",
+      "tip": "AJAX WIN",
       "outcome": "loss"
     },
     {
@@ -94,3 +94,4 @@
     }
   ]
 }
+
