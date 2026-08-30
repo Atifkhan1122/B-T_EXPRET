@@ -1,17 +1,17 @@
-{
-  "vip_config": {
-    "current_pin": "000000"
+no{
+    "vip_config": {
+    "current_pin": "7798"
   },
   "freetips": [
     {
-       "status": "3:00.pm",
+      "status": "FREE",
       "teams": "ENG VS PAK",
       "tip": "ENGLAND WIN"
     },
     {
       "status": "FREE",
-      "teams": "Football Free Match",
-      "tip": "FARM WIN"
+      "teams": Lucknow Vs Gorakhpur",
+      "tip": "Gorakhpur Lions WIN"
     }
   ],
   "football": [
@@ -47,51 +47,59 @@
     },
     {
       "status": "14:00",
-      "teams": "RENEGADES VS HOBART",
-      "tip": "HOBART WIN",
+      "teams": "SCOTLAND W VS NETHERLANDS W",
+      "tip": "NETHERLANDS W WIN",
       "load": "Live",
       "info": "Premium"
     },
     {
-      "status": "17:00",
-      "teams": "Rajshahi vs Sylhet",
-      "tip": "Rajshahi WIN",
+      "status": "7:00.pm",
+      "teams": "Noida vs Meerut",
+      "tip": "Meerut WIN",
       "load": "Jackpot",
       "info": "Golden"
     }
   ],
   "tennis": [
     {
-      "status": "15:00",
-      "teams": "Dedura .D vs Bennani .R",
-      "tip": "Dedura .D",
+      "status": "17:00",
+      "teams": "Prizmic Dino vs Shevchenko Alexander
+      "tip": "Prizmic Dino WIN",
       "load": "Low",
       "info": "Single"
     },
     {
       "status": "17:00",
-      "teams": "Federer vs Murray",
-      "tip": "FEDERER",
+      "teams": "Wu Yibing vs Walton Adam",
+      "tip": "Walton Adam WIN",
+      "load": "High",
+      "info": "VVIP"
+    }
+    {
+      "status": "17:00",
+      "teams": "Shimabukuro Sho vs Rinderknech Arthur",
+      "tip": "Rinderknech Arthur WIN",,
       "load": "High",
       "info": "VVIP"
     }
   ],
   "results": [
     {
-      "teams": "India vs ",
-      "tip": "India Win",
+      "teams": "Trinbago Knight Riders vs Jamaica Kingsmen",
+      "tip": "Jamaica Kingsmen WIN",
       "outcome": "win"
     },
     {
-      "teams": "TELSTAR vs AJAX",
-      "tip": "AJAX WIN",
-      "outcome": "loss"
+      "teams": "SLW vs UAEW",
+      "tip": "SLW WIN",
+      "outcome": "win"
     },
     {
-      "teams": "Real Madrid vs Man City",
-      "tip": "Real Madrid Win",
+      "teams": "Manchester City vsCrystal Palace",
+      "tip": "Manchester City",
       "outcome": "win"
     }
   ]
 }
+
 
