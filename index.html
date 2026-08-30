@@ -14,17 +14,30 @@
         }
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body { margin: 0; font-family: 'Poppins', sans-serif; background: var(--bg-gradient); background-attachment: fixed; color: #ffffff; overflow-x: hidden; touch-action: pan-y; }
-        
-        /* Navbar */
-        nav { background: rgba(0,0,0,0.9); padding: 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
-        .logo { font-weight: 800; color: var(--gold); font-size: 20px; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Navigation Buttons */
-        .menu-bar { display: flex; overflow-x: auto; gap: 12px; padding: 15px 10px; scrollbar-width: none; position: sticky; top: 58px; z-index: 999; background: rgba(5,5,5,0.8); }
-        .menu-bar::-webkit-scrollbar { display: none; }
-        .nav-item { min-width: 90px; padding: 12px; border-radius: 12px; background: var(--inactive-btn); color: #888; text-align: center; font-size: 10px; font-weight: 700; border: 1px solid #333; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
-        .nav-item i { display: block; font-size: 18px; margin-bottom: 5px; }
-        .nav-item.active { color: #000; background: linear-gradient(145deg, var(--gold), var(--dark-gold)); border-color: #fff; box-shadow: 0 0 15px rgba(255,215,0,0.4); transform: translateY(-2px); }
+        /* Navbar */
+        nav { background: rgba(0,0,0,0.9); padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
+        .nav-left { display: flex; align-items: center; gap: 12px; }
+        .menu-toggle { font-size: 22px; color: var(--gold); cursor: pointer; }
+        
+        /* Brand Logo Styling */
+        .brand-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+        .logo-icon { width: 32px; height: 32px; }
+        .logo-text { font-weight: 800; font-size: 18px; text-transform: uppercase; letter-spacing: 1px; }
+        .logo-text .bt { background: linear-gradient(145deg, var(--gold), var(--dark-gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .logo-text .expert { color: #ffffff; }
+
+        /* Side Navigation Drawer */
+        .side-drawer { position: fixed; top: 0; left: -280px; width: 260px; height: 100%; background: #111; z-index: 6000; transition: 0.3s ease-in-out; border-right: 2px solid var(--gold); padding: 20px 10px; display: flex; flex-direction: column; gap: 10px; box-shadow: 5px 0 15px rgba(0,0,0,0.8); }
+        .side-drawer.open { left: 0; }
+        .drawer-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 15px; border-bottom: 1px solid #333; margin-bottom: 10px; }
+        .close-drawer { font-size: 22px; color: #fff; cursor: pointer; }
+        .drawer-item { display: flex; align-items: center; gap: 12px; padding: 12px 15px; border-radius: 10px; background: var(--inactive-btn); color: #ccc; font-size: 13px; font-weight: 700; cursor: pointer; transition: 0.2s; border: 1px solid #222; }
+        .drawer-item i { font-size: 18px; color: var(--gold); width: 22px; text-align: center; }
+        .drawer-item.active { background: linear-gradient(145deg, var(--gold), var(--dark-gold)); color: #000; border-color: #fff; }
+        .drawer-item.active i { color: #000; }
+        .overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 5500; backdrop-filter: blur(3px); }
+        .overlay.active { display: block; }
 
         .container { padding: 15px; max-width: 600px; margin: auto; }
 
@@ -43,18 +56,66 @@
         .bg-loss { background: var(--loss); color: #fff; }
 
         /* Modals */
-        .modal { display: none; position: fixed; z-index: 5000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); backdrop-filter: blur(8px); }
+        .modal { display: none; position: fixed; z-index: 7000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); backdrop-filter: blur(8px); }
         .modal-content { background: #1a1a1a; border: 2px solid var(--gold); width: 88%; max-width: 360px; margin: 25% auto; padding: 30px; border-radius: 25px; text-align: center; animation: modalPop 0.3s ease-out; }
         @keyframes modalPop { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
         .whatsapp-float { position: fixed; bottom: 25px; right: 20px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; color: white; z-index: 4000; }
-        
+
         .window-content { display: none; }
         .window-content.active { display: block; animation: fadeInUp 0.4s ease-out; }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Calculator Styles */
+        .calc-card { background: var(--card-bg); padding: 18px; border-radius: 16px; border: 1px solid rgba(255,215,0,0.2); margin-bottom: 15px; }
+        .calc-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .calc-group { margin-bottom: 12px; }
+        .calc-group label { display: block; font-size: 11px; color: var(--gold); margin-bottom: 4px; font-weight: bold; }
+        .calc-group input, .calc-group select { width: 100%; padding: 10px; border: 1px solid #333; background: #000; color: #fff; border-radius: 8px; font-size: 13px; outline: none; }
+        .calc-btn-group { display: flex; gap: 10px; margin-top: 10px; }
+        .calc-btn { flex: 1; padding: 10px; border: none; border-radius: 8px; font-size: 12px; font-weight: bold; cursor: pointer; color: white; }
+        .btn-l { background-color: var(--win); color: #000; }
+        .btn-k { background-color: var(--loss); }
+        .btn-s { background-color: #0284c7; }
+        .btn-w { background-color: var(--gold); color: #000; }
+        .book-box { background: #0a0a0a; padding: 12px; border-radius: 8px; margin-top: 12px; border: 1px solid #333; }
+        .book-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #222; font-size: 13px; font-weight: bold; }
+        .c-profit { color: var(--win); }
+        .c-loss { color: var(--loss); }
+        .calc-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 11px; text-align: left; }
+        .calc-table th, .calc-table td { padding: 6px; border-bottom: 1px solid #333; color: #ccc; }
+        .calc-table th { color: var(--gold); background: #000; }
     </style>
 </head>
 <body>
+
+    <div class="overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
+    <div class="side-drawer" id="sideDrawer">
+        <div class="drawer-header">
+            <div class="brand-logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="gD" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#FFD700" />
+                            <stop offset="100%" stop-color="#B8860B" />
+                        </linearGradient>
+                    </defs>
+                    <polygon points="100,10 170,40 170,110 100,185 30,110 30,40" fill="#111" stroke="url(#gD)" stroke-width="6" />
+                    <path d="M 70 65 L 80 80 L 100 60 L 120 80 L 130 65 L 125 90 L 75 90 Z" fill="url(#gD)" />
+                    <text x="100" y="125" font-family="'Poppins', sans-serif" font-weight="900" font-size="34" fill="url(#gD)" text-anchor="middle">BT</text>
+                    <text x="100" y="150" font-family="'Poppins', sans-serif" font-weight="600" font-size="12" fill="#FFF" letter-spacing="2" text-anchor="middle">EXPERT</text>
+                </svg>
+                <div class="logo-text"><span class="bt">BT</span> <span class="expert">EXPERT</span></div>
+            </div>
+            <i class="fas fa-times close-drawer" onclick="toggleDrawer()"></i>
+        </div>
+        <div class="drawer-item active" onclick="selectSection('freetips', 0)"><i class="fas fa-bolt"></i> FREE TIPS</div>
+        <div class="drawer-item" onclick="selectSection('football', 1)"><i class="fas fa-futbol"></i> FOOTBALL</div>
+        <div class="drawer-item" onclick="selectSection('cricket', 2)"><i class="fas fa-baseball-bat-ball"></i> CRICKET</div>
+        <div class="drawer-item" onclick="selectSection('tennis', 3)"><i class="fas fa-table-tennis-paddle-ball"></i> TENNIS</div>
+        <div class="drawer-item" onclick="selectSection('calculator', 4)"><i class="fas fa-calculator"></i> CALCULATOR</div>
+        <div class="drawer-item" onclick="selectSection('results', 5)"><i class="fas fa-history"></i> RESULTS</div>
+    </div>
 
     <div id="loginModal" class="modal">
         <div class="modal-content">
@@ -82,21 +143,156 @@
         </div>
     </div>
 
-    <nav><div class="logo">BT EXPERT</div><div id="vipStatus" style="font-size:10px; color:#ff5252; font-weight:900; border:1.5px solid #ff5252; padding:5px 12px; border-radius:20px;" onclick="openModal('loginModal')">VIP LOCKED</div></nav>
-
-    <div class="menu-bar">
-        <div class="nav-item active" onclick="openWindow('freetips', 0)"><i class="fas fa-bolt"></i>FREE</div>
-        <div class="nav-item" onclick="openWindow('football', 1)"><i class="fas fa-futbol"></i>FOOTBALL</div>
-        <div class="nav-item" onclick="openWindow('cricket', 2)"><i class="fas fa-baseball-bat-ball"></i>CRICKET</div>
-        <div class="nav-item" onclick="openWindow('tennis', 3)"><i class="fas fa-table-tennis-paddle-ball"></i>TENNIS</div>
-        <div class="nav-item" onclick="openWindow('results', 4)"><i class="fas fa-history"></i>RESULTS</div>
+    <div id="resultModal" class="modal">
+        <div class="modal-content">
+            <h3 style="color: var(--gold); margin: 0;">MATCH FINAL RESULT</h3>
+            <p style="margin-top: 10px; font-size: 13px; color: #888;">Winner: <b id="winningTeamName" style="color: #fff;"></b></p>
+            <div id="finalPnLDisplay" style="font-size: 20px; font-weight: bold; margin: 15px 0;">0</div>
+            <div style="text-align: left; background: #000; padding: 10px; border-radius: 8px; font-size: 12px; margin-top: 10px;">
+                <p>Match Book: <b id="finalMatchBook">0</b></p>
+                <p>Session Book: <b id="finalSessionBook">0</b></p>
+            </div>
+            <button onclick="closeModal('resultModal')" class="tip-btn" style="width:100%; margin-top:15px; background:#333; color:#fff;">CLOSE</button>
+        </div>
     </div>
 
-    <div class="container" id="swipeArea">
+    <nav>
+        <div class="nav-left">
+            <i class="fas fa-bars menu-toggle" onclick="toggleDrawer()"></i>
+            <div class="brand-logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="gN" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#FFD700" />
+                            <stop offset="100%" stop-color="#B8860B" />
+                        </linearGradient>
+                    </defs>
+                    <polygon points="100,10 170,40 170,110 100,185 30,110 30,40" fill="#111" stroke="url(#gN)" stroke-width="6" />
+                    <path d="M 70 65 L 80 80 L 100 60 L 120 80 L 130 65 L 125 90 L 75 90 Z" fill="url(#gN)" />
+                    <text x="100" y="125" font-family="'Poppins', sans-serif" font-weight="900" font-size="34" fill="url(#gN)" text-anchor="middle">BT</text>
+                    <text x="100" y="150" font-family="'Poppins', sans-serif" font-weight="600" font-size="12" fill="#FFF" letter-spacing="2" text-anchor="middle">EXPERT</text>
+                </svg>
+                <div class="logo-text"><span class="bt">BT</span> <span class="expert">EXPERT</span></div>
+            </div>
+        </div>
+        <div id="vipStatus" style="font-size:10px; color:#ff5252; font-weight:900; border:1.5px solid #ff5252; padding:5px 12px; border-radius:20px;" onclick="openModal('loginModal')">VIP LOCKED</div>
+    </nav>
+
+    <div class="container">
         <div id="freetips" class="window-content active"></div>
         <div id="football" class="window-content"></div>
         <div id="cricket" class="window-content"></div>
         <div id="tennis" class="window-content"></div>
+
+        <div id="calculator" class="window-content">
+            <div class="calc-card">
+                <h4 style="color:var(--gold); text-align:center; margin-bottom:10px;">Format & Teams</h4>
+                <div class="calc-group">
+                    <label>Match Format:</label>
+                    <select id="matchFormat" onchange="updateOversList()">
+                        <option value="T20" selected>T20 Match</option>
+                        <option value="ODI">ODI Match</option>
+                        <option value="TEST">TEST Match</option>
+                    </select>
+                </div>
+                <div class="calc-grid-2">
+                    <div class="calc-group">
+                        <label>Team A:</label>
+                        <input type="text" id="teamA" value="PAK" oninput="updateTeamNames()">
+                    </div>
+                    <div class="calc-group">
+                        <label>Team B:</label>
+                        <input type="text" id="teamB" value="IND" oninput="updateTeamNames()">
+                    </div>
+                </div>
+                <div class="calc-group">
+                    <label>Favorite Team:</label>
+                    <select id="favTeam">
+                        <option value="A" selected id="optTeamA">PAK</option>
+                        <option value="B" id="optTeamB">IND</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="calc-card">
+                <h4 style="color:var(--gold); text-align:center; margin-bottom:10px;">Match Bet (Khai / Lagai)</h4>
+                <div class="calc-grid-2">
+                    <div class="calc-group">
+                        <label>Amount (PKR):</label>
+                        <input type="number" id="matchAmount" placeholder="10000">
+                    </div>
+                    <div class="calc-group">
+                        <label>Rate (Paisa):</label>
+                        <input type="number" id="matchRate" placeholder="80">
+                    </div>
+                </div>
+                <div class="calc-btn-group">
+                    <button class="calc-btn btn-l" onclick="addMatchBet('LAGAI')">LAGAI (Back)</button>
+                    <button class="calc-btn btn-k" onclick="addMatchBet('KHAI')">KHAI (Lay)</button>
+                </div>
+                <div class="book-box">
+                    <div class="book-row"><span id="labelTeamA">PAK Win P&L:</span><span id="pnlTeamA" class="c-profit">0</span></div>
+                    <div class="book-row"><span id="labelTeamB">IND Win P&L:</span><span id="pnlTeamB" class="c-profit">0</span></div>
+                </div>
+                <table id="matchBetsTable" class="calc-table">
+                    <thead><tr><th>Fav</th><th>Type</th><th>Rate</th><th>Amount</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <div class="calc-card">
+                <h4 style="color:var(--gold); text-align:center; margin-bottom:10px;">Session / Over Hisab</h4>
+                <div class="calc-grid-2">
+                    <div class="calc-group">
+                        <label>Session Over:</label>
+                        <select id="sessionOver"></select>
+                    </div>
+                    <div class="calc-group">
+                        <label>Target Runs:</label>
+                        <input type="number" id="sessionRuns" placeholder="e.g. 50">
+                    </div>
+                </div>
+                <div class="calc-grid-2">
+                    <div class="calc-group">
+                        <label>Amount:</label>
+                        <input type="number" id="sessionAmount" placeholder="5000">
+                    </div>
+                    <div class="calc-group">
+                        <label>Rate:</label>
+                        <input type="number" id="sessionRate" value="100">
+                    </div>
+                </div>
+                <div class="calc-group">
+                    <label>Type:</label>
+                    <select id="sessionType">
+                        <option value="YES">YES (Pass)</option>
+                        <option value="NO">NO (Fail)</option>
+                    </select>
+                </div>
+                <button class="calc-btn btn-s" style="width:100%" onclick="addSessionBet()">ADD SESSION</button>
+                <div class="book-box">
+                    <div class="book-row"><span>Pass/Yes Net:</span><span id="pnlSessionPass" class="c-profit">0</span></div>
+                    <div class="book-row"><span>Not Pass/No Net:</span><span id="pnlSessionFail" class="c-profit">0</span></div>
+                </div>
+                <table id="sessionBetsTable" class="calc-table">
+                    <thead><tr><th>Over</th><th>Score</th><th>Type</th><th>Rate</th><th>Amount</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <div class="calc-card">
+                <h4 style="color:var(--gold); text-align:center; margin-bottom:10px;">Declare Winner</h4>
+                <div class="calc-group">
+                    <label>Winner Team:</label>
+                    <select id="winnerTeam">
+                        <option value="A" id="winOptA">PAK</option>
+                        <option value="B" id="winOptB">IND</option>
+                    </select>
+                </div>
+                <button class="calc-btn btn-w" style="width:100%" onclick="showFinalResult()">SHOW FINAL RESULT</button>
+            </div>
+        </div>
+
         <div id="results" class="window-content"><div id="resultsList"></div></div>
     </div>
 
@@ -105,39 +301,86 @@
     <script>
         let isVip = false;
         let currentIdx = 0;
-        let correctVipPin = ""; 
-        const sections = ['freetips', 'football', 'cricket', 'tennis', 'results'];
+        let correctVipPin = "7860"; 
+
+        const defaultData = {
+            freetips: [
+                { teams: "PAK vs IND", status: "7:00 PM", load: "HIGH", info: "FREE", tip: "PAKISTAN WIN" },
+                { teams: "AUS vs ENG", status: "10:30 PM", load: "MED", info: "FREE", tip: "ENGLAND WIN" },
+                { teams: "SA vs NZ", status: "LIVE", load: "HOT", info: "FREE", tip: "SOUTH AFRICA WIN" },
+                { teams: "SL vs BAN", status: "TOMORROW", load: "NORMAL", info: "FREE", tip: "SRI LANKA WIN" }
+            ],
+            football: [
+                { teams: "Real Madrid vs Barcelona", status: "11:00 PM", load: "VIP", info: "EL CLASSICO", tip: "REAL MADRID WIN" },
+                { teams: "Man City vs Liverpool", status: "8:30 PM", load: "VIP", info: "PREMIER LEAGUE", tip: "OVER 2.5 GOALS" },
+                { teams: "PSG vs Bayern Munich", status: "12:00 AM", load: "VIP", info: "UCL", tip: "BAYERN MUNICH WIN" },
+                { teams: "Juventus vs Inter Milan", status: "9:45 PM", load: "VIP", info: "SERIE A", tip: "DRAW" }
+            ],
+            cricket: [
+                { teams: "Lahore Qalandars vs Peshawar Zalmi", status: "7:30 PM", load: "PSL VIP", info: "HIGH LOAD", tip: "LAHORE QALANDARS WIN" },
+                { teams: "MI vs CSK", status: "7:30 PM", load: "IPL VIP", info: "BIG MATCH", tip: "CSK WIN" },
+                { teams: "Sydney Sixers vs Perth Scorchers", status: "1:45 PM", load: "BBL VIP", info: "JACKPOT", tip: "PERTH SCORCHERS WIN" }
+            ],
+            tennis: [
+                { teams: "Novak Djokovic vs Carlos Alcaraz", status: "6:00 PM", load: "FINAL", info: "ATP", tip: "DJOKOVIC WIN" },
+                { teams: "Jannik Sinner vs Daniil Medvedev", status: "9:00 PM", load: "VIP", info: "ATP", tip: "SINNER WIN" },
+                { teams: "Aryna Sabalenka vs Iga Swiatek", status: "4:00 PM", load: "WTA", info: "VIP", tip: "SWIATEK WIN" }
+            ],
+            results: [
+                { teams: "PAK vs NZ (T20)", tip: "PAK WIN", outcome: "win" },
+                { teams: "Chelsea vs Arsenal", tip: "ARSENAL WIN", outcome: "win" },
+                { teams: "AUS vs WI (ODI)", tip: "WI WIN", outcome: "loss" },
+                { teams: "Nadal vs Zverev", tip: "NADAL WIN", outcome: "win" }
+            ]
+        };
+
+        function toggleDrawer() {
+            document.getElementById('sideDrawer').classList.toggle('open');
+            document.getElementById('drawerOverlay').classList.toggle('active');
+        }
+
+        function selectSection(id, idx) {
+            toggleDrawer();
+            openWindow(id, idx);
+        }
+
+        function renderMatches(data) {
+            const render = (m, isFree) => `
+                <div class="match-card" onclick="${isFree ? `showTip('${m.teams}', '${m.tip}')` : `handleVip('${m.teams}', '${m.tip}')`}">
+                    <div class="m-time">${m.status}</div>
+                    <div>
+                        <div class="m-teams">${m.teams}</div>
+                        <div style="margin-top:5px; padding-left:12px;">
+                            ${m.load ? `<span class="tag">${m.load}</span>` : ''}
+                            ${m.info ? `<span class="tag">${m.info}</span>` : ''}
+                        </div>
+                    </div>
+                    <div class="tip-btn">${isFree ? 'OPEN' : 'VIP'}</div>
+                </div>`;
+
+            document.getElementById('freetips').innerHTML = data.freetips.map(m => render(m, true)).join('');
+            document.getElementById('football').innerHTML = data.football.map(m => render(m, false)).join('');
+            document.getElementById('cricket').innerHTML = data.cricket.map(m => render(m, false)).join('');
+            document.getElementById('tennis').innerHTML = data.tennis.map(m => render(m, false)).join('');
+            document.getElementById('resultsList').innerHTML = data.results.map(m => `
+                <div class="match-card ${m.outcome === 'win' ? 'res-win' : 'res-loss'}">
+                    <div class="m-time" style="color:#666">END</div>
+                    <div class="m-teams">${m.teams}<br><small style="color:var(--gold); font-size:11px;">Tip: ${m.tip}</small></div>
+                    <div class="badge ${m.outcome === 'win' ? 'bg-win' : 'bg-loss'}">${m.outcome === 'win' ? 'WON' : 'LOSS'}</div>
+                </div>`).join('');
+        }
 
         async function loadData() {
             try {
                 const res = await fetch('matches.json');
                 const data = await res.json();
-                correctVipPin = data.vip_config.current_pin;
-                
-                const render = (m, isFree) => `
-                    <div class="match-card" onclick="${isFree ? `showTip('${m.teams}', '${m.tip}')` : `handleVip('${m.teams}', '${m.tip}')`}">
-                        <div class="m-time">${m.status}</div>
-                        <div>
-                            <div class="m-teams">${m.teams}</div>
-                            <div style="margin-top:5px; padding-left:12px;">
-                                ${m.load ? `<span class="tag">${m.load}</span>` : ''}
-                                ${m.info ? `<span class="tag">${m.info}</span>` : ''}
-                            </div>
-                        </div>
-                        <div class="tip-btn">${isFree ? 'OPEN' : 'VIP'}</div>
-                    </div>`;
-
-                document.getElementById('freetips').innerHTML = data.freetips.map(m => render(m, true)).join('');
-                document.getElementById('football').innerHTML = data.football.map(m => render(m, false)).join('');
-                document.getElementById('cricket').innerHTML = data.cricket.map(m => render(m, false)).join('');
-                document.getElementById('tennis').innerHTML = data.tennis.map(m => render(m, false)).join('');
-                document.getElementById('resultsList').innerHTML = data.results.map(m => `
-                    <div class="match-card ${m.outcome === 'win' ? 'res-win' : 'res-loss'}">
-                        <div class="m-time" style="color:#666">END</div>
-                        <div class="m-teams">${m.teams}<br><small style="color:var(--gold); font-size:11px;">Tip: ${m.tip}</small></div>
-                        <div class="badge ${m.outcome === 'win' ? 'bg-win' : 'bg-loss'}">${m.outcome === 'win' ? 'WON' : 'LOSS'}</div>
-                    </div>`).join('');
-            } catch (e) { console.error("JSON Error"); }
+                if(data.vip_config && data.vip_config.current_pin) {
+                    correctVipPin = data.vip_config.current_pin;
+                }
+                renderMatches(data);
+            } catch (e) { 
+                renderMatches(defaultData); 
+            }
         }
 
         function verifyLogin() { 
@@ -155,32 +398,146 @@
             } 
         }
 
-        function openWindow(id, idx, push = true) {
+        function openWindow(id, idx) {
             currentIdx = idx;
             document.querySelectorAll('.window-content').forEach(w => w.classList.remove('active'));
-            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            document.querySelectorAll('.drawer-item').forEach(d => d.classList.remove('active'));
+
             document.getElementById(id).classList.add('active');
-            document.querySelectorAll('.nav-item')[idx].classList.add('active');
-            document.querySelectorAll('.nav-item')[idx].scrollIntoView({ behavior: 'smooth', inline: 'center' });
-            if(push) history.pushState({id, idx}, "");
+            document.querySelectorAll('.drawer-item')[idx].classList.add('active');
         }
-
-        window.onpopstate = (e) => { if(e.state) openWindow(e.state.id, e.state.idx, false); else openWindow('freetips', 0, false); };
-
-        let startX = 0;
-        document.getElementById('swipeArea').addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
-        document.getElementById('swipeArea').addEventListener('touchend', e => {
-            let endX = e.changedTouches[0].clientX;
-            if(startX - endX > 80 && currentIdx < 4) openWindow(sections[currentIdx+1], currentIdx+1);
-            if(endX - startX > 80 && currentIdx > 0) openWindow(sections[currentIdx-1], currentIdx-1);
-        });
 
         function openModal(id) { document.getElementById(id).style.display = 'block'; }
         function closeModal(id) { document.getElementById(id).style.display = 'none'; }
         function showTip(t, p) { document.getElementById('popTeams').innerText = t; document.getElementById('popTip').innerText = p; openModal('tipModal'); }
         function handleVip(t, p) { if(isVip) showTip(t, p); else openModal('loginModal'); }
-        
-        window.onload = () => { history.replaceState({id:'freetips', idx:0}, ""); loadData(); };
+
+        /* Cricket Calculator Logic */
+        let pnlA = 0;
+        let pnlB = 0;
+        let sessionYesPnL = 0;
+        let sessionNoPnL = 0;
+
+        const oversFormatMap = {
+            'T20': ['6 Over Session', '10 Over Session', '15 Over Session', '20 Over Session (Lambee)'],
+            'ODI': ['10 Over Session', '20 Over Session', '30 Over Session', '40 Over Session', '50 Over Session (Lambee)'],
+            'TEST': ['15 Over Session', '30 Over Session', '45 Over Session', '60 Over Session', '90 Over Session (Day End)']
+        };
+
+        function updateOversList() {
+            let format = document.getElementById('matchFormat').value;
+            let selectOver = document.getElementById('sessionOver');
+            selectOver.innerHTML = '';
+            oversFormatMap[format].forEach(ov => {
+                let opt = document.createElement('option');
+                opt.value = ov;
+                opt.innerText = ov;
+                selectOver.appendChild(opt);
+            });
+        }
+
+        function updateTeamNames() {
+            let tA = document.getElementById('teamA').value || 'Team A';
+            let tB = document.getElementById('teamB').value || 'Team B';
+            document.getElementById('optTeamA').innerText = tA;
+            document.getElementById('optTeamB').innerText = tB;
+            document.getElementById('winOptA').innerText = tA;
+            document.getElementById('winOptB').innerText = tB;
+            document.getElementById('labelTeamA').innerText = tA + " Win P&L:";
+            document.getElementById('labelTeamB').innerText = tB + " Win P&L:";
+        }
+
+        function addMatchBet(type) {
+            let amount = parseFloat(document.getElementById('matchAmount').value);
+            let rateVal = parseFloat(document.getElementById('matchRate').value);
+            let fav = document.getElementById('favTeam').value;
+            let tA = document.getElementById('teamA').value || 'Team A';
+            let tB = document.getElementById('teamB').value || 'Team B';
+
+            if (!amount || !rateVal) return alert("Enter amount and rate!");
+
+            let rate = rateVal > 1 ? rateVal / 100 : rateVal;
+            let favName = fav === 'A' ? tA : tB;
+
+            if (fav === 'A') {
+                if (type === 'LAGAI') { pnlA += (amount * rate); pnlB -= amount; } 
+                else { pnlA -= (amount * rate); pnlB += amount; }
+            } else {
+                if (type === 'LAGAI') { pnlB += (amount * rate); pnlA -= amount; } 
+                else { pnlB -= (amount * rate); pnlA += amount; }
+            }
+
+            updateDisplay('pnlTeamA', pnlA);
+            updateDisplay('pnlTeamB', pnlB);
+
+            let tbody = document.getElementById('matchBetsTable').querySelector('tbody');
+            let row = `<tr><td>${favName}</td><td>${type}</td><td>${rateVal}</td><td>${amount}</td></tr>`;
+            tbody.innerHTML = row + tbody.innerHTML;
+        }
+
+        function addSessionBet() {
+            let selectedOver = document.getElementById('sessionOver').value;
+            let runs = document.getElementById('sessionRuns').value;
+            let amount = parseFloat(document.getElementById('sessionAmount').value);
+            let rateVal = parseFloat(document.getElementById('sessionRate').value);
+            let type = document.getElementById('sessionType').value;
+
+            if (!runs || !amount || !rateVal) return alert("Enter session details!");
+
+            let rate = rateVal > 1 ? rateVal / 100 : rateVal;
+
+            if (type === 'YES') { sessionYesPnL += (amount * rate); sessionNoPnL -= amount; } 
+            else { sessionYesPnL -= (amount * rate); sessionNoPnL += (amount * rate); }
+
+            updateDisplay('pnlSessionPass', sessionYesPnL);
+            updateDisplay('pnlSessionFail', sessionNoPnL);
+
+            let tbody = document.getElementById('sessionBetsTable').querySelector('tbody');
+            let row = `<tr><td>${selectedOver.split(' ')[0]} Ov</td><td>${runs}</td><td>${type}</td><td>${rateVal}</td><td>${amount}</td></tr>`;
+            tbody.innerHTML = row + tbody.innerHTML;
+        }
+
+        function updateDisplay(elementId, value) {
+            let el = document.getElementById(elementId);
+            if (value >= 0) {
+                el.className = 'c-profit';
+                el.innerText = "+ PKR " + Math.round(value).toLocaleString();
+            } else {
+                el.className = 'c-loss';
+                el.innerText = "- PKR " + Math.abs(Math.round(value)).toLocaleString();
+            }
+        }
+
+        function showFinalResult() {
+            let winner = document.getElementById('winnerTeam').value;
+            let tA = document.getElementById('teamA').value || 'Team A';
+            let tB = document.getElementById('teamB').value || 'Team B';
+
+            let winningTeamName = winner === 'A' ? tA : tB;
+            let matchBookPnL = winner === 'A' ? pnlA : pnlB;
+            let totalPnL = matchBookPnL + sessionYesPnL; 
+
+            document.getElementById('winningTeamName').innerText = winningTeamName;
+            document.getElementById('finalMatchBook').innerText = (matchBookPnL >= 0 ? "+" : "") + Math.round(matchBookPnL).toLocaleString() + " PKR";
+            document.getElementById('finalSessionBook').innerText = (sessionYesPnL >= 0 ? "+" : "") + Math.round(sessionYesPnL).toLocaleString() + " PKR";
+
+            let finalDisplay = document.getElementById('finalPnLDisplay');
+            if (totalPnL >= 0) {
+                finalDisplay.style.color = "var(--win)";
+                finalDisplay.innerText = "TOTAL PROFIT: + PKR " + Math.round(totalPnL).toLocaleString();
+            } else {
+                finalDisplay.style.color = "var(--loss)";
+                finalDisplay.innerText = "TOTAL LOSS: - PKR " + Math.abs(Math.round(totalPnL)).toLocaleString();
+            }
+
+            openModal('resultModal');
+        }
+
+        window.onload = () => { 
+            loadData(); 
+            updateOversList(); 
+            updateTeamNames(); 
+        };
     </script>
 </body>
 </html>
