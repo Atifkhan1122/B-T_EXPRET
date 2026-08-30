@@ -1,4 +1,4 @@
-no{
+{
     "vip_config": {
     "current_pin": "7798"
   },
@@ -10,7 +10,7 @@ no{
     },
     {
       "status": "FREE",
-      "teams": Lucknow Vs Gorakhpur",
+      "teams": "Lucknow Vs Gorakhpur",
       "tip": "Gorakhpur Lions WIN"
     }
   ],
