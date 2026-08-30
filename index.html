@@ -301,141 +301,136 @@
     <script>
         let isVip = false;
         let currentIdx = 0;
-        let correctVipPin = "7860"; 
-
-        const defaultData = {
-            freetips: [
-               <script>
-        let isVip = false;
-        let currentIdx = 0;
         let correctVipPin = "7890"; 
 
         const defaultData = {
             freetips: [
-                 "teams": "ENG vs PAK",
-      "status": "3:00 PM",
-      "load": "HIGH LOAD",
-      "info": "FREE TIP",
-      "tip": "ENGLAND WIN"
-    },
-    {
-      "teams": "SCO-W vs NED-W",
-      "status": "2:30 PM",
-      "load": "MED LOAD",
-      "info": "FREE TIP",
-      "tip": "NEDERLAND WOMAN WIN"
-    },
-    {
-      "teams": "SA vs NZ",
-      "status": "LIVE",
-      "load": "HOT MATCH",
-      "info": "FREE TIP",
-      "tip": "SOUTH AFRICA WIN"
-    },
-    {
-      "teams": "SL vs BAN",
-      "status": "TOMORROW",
-      "load": "NORMAL",
-      "info": "FREE TIP",
-      "tip": "SRI LANKA WIN"
-    }
-  ],
-  "football": [
-    {
-      "teams": "CAGLIARI vsINTER ",
-      "status": ":00 PM",
-      "load": "VIP TIP",
-      "info": "🇸🇯Norway, 30 August",
-      "tip": "INTER WIN"
-    },
-    {
-      "teams": "FARM vsAKUREYRI",
-      "status": "8:30 PM",
-      "load": "VIP TIP",
-      "info": "EPL",
-      "tip": "FARM WIN"
-    },
-    {
-      "teams": "PSG vs Bayern Munich",
-      "status": "12:00 AM",
-      "load": "VIP TIP",
-      "info": "UCL",
-      "tip": "BAYERN MUNICH WIN"
-    },
-    {
-      "teams": "Juventus vs Inter Milan",
-      "status": "9:45 PM",
-      "load": "VIP TIP",
-      "info": "SERIE A",
-      "tip": "DRAW MATCH"
-    }
-  ],
-  "cricket": [
-    {
-      "teams": "St Kitts & Nevis Patriots vsAntigua & Barbuda Falcons"
-      "status": "31 Aug 2026, 04:00 am",
-      "load": "Caribbean Premier League 2026 VIP",
-      "info": "JACKPOT",
-      "tip": "St Kitts & Nevis Patriots WIN"
-    },
-    {
-      "teams": "MI vs CSK",
-      "status": "7:30 PM",
-      "load": "IPL VIP",
-      "info": "BIG MATCH",
-      "tip": "CSK WIN"
-    },
-    {
-      "teams": "Indian Woman vs Thailand Woman",
-      "status": "7:30 PM",
-      "load": "Asia cup VIP",
-      "info": "SURE TIP",
-      "tip": "INDIAN WOMAN WIN"
-    }
-  ],
-  "tennis": [
-    {
-      "teams": "Novak Djokovic vs Carlos Alcaraz",
-      "status": "6:00 PM",
-      "load": "FINAL",
-      "info": "ATP",
-      "tip": "DJOKOVIC WIN"
-    },
-    {
-      "teams": "Jannik Sinner vs Daniil Medvedev",
-      "status": "9:00 PM",
-      "load": "VIP TIP",
-      "info": "ATP",
-      "tip": "SINNER WIN"
-    },
-    {
-      "teams": "Aryna Sabalenka vs Iga Swiatek",
-      "status": "4:00 PM",
-      "load": "WTA VIP",
-      "info": "WOMEN SINGLE",
-      "tip": "SWIATEK WIN"
-    }
-  ],
-  "results": [
-    {
-      "teams": "PAK vs NZ (T20)",
-      "tip": "PAK WIN",
-      "outcome": "win"
-    },
-    {
-      "teams": "Chelsea vs Arsenal",
-      "tip": "ARSENAL WIN",
-      "outcome": "win"
-    },
-    {
-      "teams": "AUS vs WI (ODI)",
-      "tip": "WI WIN",
-      "outcome": "loss"
-    },
-    {
-      "teams": "Nadal vs Zverev",
-      "tip": "NADAL WIN",
-      "outcome": "win"  }
+                {
+                    "teams": "ENG vs PAK",
+                    "status": "3:00 PM",
+                    "load": "HIGH LOAD",
+                    "info": "FREE TIP",
+                    "tip": "ENGLAND WIN"
+                },
+                {
+                    "teams": "SCO-W vs NED-W",
+                    "status": "2:30 PM",
+                    "load": "MED LOAD",
+                    "info": "FREE TIP",
+                    "tip": "NEDERLAND WOMAN WIN"
+                },
+                {
+                    "teams": "SA vs NZ",
+                    "status": "LIVE",
+                    "load": "HOT MATCH",
+                    "info": "FREE TIP",
+                    "tip": "SOUTH AFRICA WIN"
+                },
+                {
+                    "teams": "SL vs BAN",
+                    "status": "TOMORROW",
+                    "load": "NORMAL",
+                    "info": "FREE TIP",
+                    "tip": "SRI LANKA WIN"
+                }
+            ],
+            football: [
+                {
+                    "teams": "CAGLIARI vs INTER",
+                    "status": "7:00 PM",
+                    "load": "VIP TIP",
+                    "info": "Norway, 30 August",
+                    "tip": "INTER WIN"
+                },
+                {
+                    "teams": "FARM vs AKUREYRI",
+                    "status": "8:30 PM",
+                    "load": "VIP TIP",
+                    "info": "EPL",
+                    "tip": "FARM WIN"
+                },
+                {
+                    "teams": "PSG vs Bayern Munich",
+                    "status": "12:00 AM",
+                    "load": "VIP TIP",
+                    "info": "UCL",
+                    "tip": "BAYERN MUNICH WIN"
+                },
+                {
+                    "teams": "Juventus vs Inter Milan",
+                    "status": "9:45 PM",
+                    "load": "VIP TIP",
+                    "info": "SERIE A",
+                    "tip": "DRAW MATCH"
+                }
+            ],
+            cricket: [
+                {
+                    "teams": "St Kitts & Nevis Patriots vs Antigua & Barbuda Falcons",
+                    "status": "31 Aug 2026, 04:00 am",
+                    "load": "CPL 2026 VIP",
+                    "info": "JACKPOT",
+                    "tip": "St Kitts & Nevis Patriots WIN"
+                },
+                {
+                    "teams": "MI vs CSK",
+                    "status": "7:30 PM",
+                    "load": "IPL VIP",
+                    "info": "BIG MATCH",
+                    "tip": "CSK WIN"
+                },
+                {
+                    "teams": "Indian Woman vs Thailand Woman",
+                    "status": "7:30 PM",
+                    "load": "Asia cup VIP",
+                    "info": "SURE TIP",
+                    "tip": "INDIAN WOMAN WIN"
+                }
+            ],
+            tennis: [
+                {
+                    "teams": "Novak Djokovic vs Carlos Alcaraz",
+                    "status": "6:00 PM",
+                    "load": "FINAL",
+                    "info": "ATP",
+                    "tip": "DJOKOVIC WIN"
+                },
+                {
+                    "teams": "Jannik Sinner vs Daniil Medvedev",
+                    "status": "9:00 PM",
+                    "load": "VIP TIP",
+                    "info": "ATP",
+                    "tip": "SINNER WIN"
+                },
+                {
+                    "teams": "Aryna Sabalenka vs Iga Swiatek",
+                    "status": "4:00 PM",
+                    "load": "WTA VIP",
+                    "info": "WOMEN SINGLE",
+                    "tip": "SWIATEK WIN"
+                }
+            ],
+            results: [
+                {
+                    "teams": "PAK vs NZ (T20)",
+                    "tip": "PAK WIN",
+                    "outcome": "win"
+                },
+                {
+                    "teams": "Chelsea vs Arsenal",
+                    "tip": "ARSENAL WIN",
+                    "outcome": "win"
+                },
+                {
+                    "teams": "AUS vs WI (ODI)",
+                    "tip": "WI WIN",
+                    "outcome": "loss"
+                },
+                {
+                    "teams": "Nadal vs Zverev",
+                    "tip": "NADAL WIN",
+                    "outcome": "win"
+                }
             ]
         };
 
