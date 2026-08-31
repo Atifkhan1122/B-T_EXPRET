@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>BetPro EXPERT | VIP Portal</title>
+    <title>BET PRO EXPERT | VIP Portal</title>
+    
+    <!-- PWA / App Installation Web Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ffd700">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -23,7 +28,7 @@
         /* Brand Logo Styling */
         .brand-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
         .logo-icon { width: 32px; height: 32px; }
-        .logo-text { font-weight: 800; font-size: 18px; text-transform: uppercase; letter-spacing: 1px; }
+        .logo-text { font-weight: 800; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; }
         .logo-text .bt { background: linear-gradient(145deg, var(--gold), var(--dark-gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .logo-text .expert { color: #ffffff; }
 
@@ -60,7 +65,10 @@
         .modal-content { background: #1a1a1a; border: 2px solid var(--gold); width: 88%; max-width: 360px; margin: 25% auto; padding: 30px; border-radius: 25px; text-align: center; animation: modalPop 0.3s ease-out; }
         @keyframes modalPop { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
-        .whatsapp-float { position: fixed; bottom: 25px; right: 20px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; color: white; z-index: 4000; }
+        /* Floating WhatsApp Button with Badge */
+        .whatsapp-container { position: fixed; bottom: 25px; right: 20px; display: flex; align-items: center; z-index: 4000; }
+        .whatsapp-float { background: #25d366; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: white; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        .whatsapp-text { background: rgba(0, 0, 0, 0.85); border: 1px solid var(--gold); color: var(--gold); padding: 5px 12px; border-radius: 20px; font-size: 10px; font-weight: 800; margin-right: 8px; white-space: nowrap; box-shadow: 0 2px 8px rgba(0,0,0,0.5); letter-spacing: 0.5px; }
 
         .window-content { display: none; }
         .window-content.active { display: block; animation: fadeInUp 0.4s ease-out; }
@@ -85,6 +93,14 @@
         .calc-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 11px; text-align: left; }
         .calc-table th, .calc-table td { padding: 6px; border-bottom: 1px solid #333; color: #ccc; }
         .calc-table th { color: var(--gold); background: #000; }
+
+        /* Contact Admin Section */
+        .admin-card { background: var(--card-bg); border-radius: 16px; padding: 20px; border: 1px solid var(--gold); text-align: center; margin-bottom: 20px; }
+        .admin-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #25d366; color: #fff; text-decoration: none; padding: 12px 20px; border-radius: 10px; font-weight: 800; font-size: 13px; width: 100%; margin-top: 10px; }
+        
+        /* App Install Banner */
+        .install-banner { background: linear-gradient(135deg, #222, #111); border: 1px solid var(--gold); border-radius: 12px; padding: 12px; margin-bottom: 15px; display: none; align-items: center; justify-content: space-between; }
+        .install-btn { background: var(--gold); color: #000; border: none; padding: 8px 14px; border-radius: 8px; font-weight: 800; font-size: 11px; cursor: pointer; }
     </style>
 </head>
 <body>
@@ -103,9 +119,9 @@
                     <polygon points="100,10 170,40 170,110 100,185 30,110 30,40" fill="#111" stroke="url(#gD)" stroke-width="6" />
                     <path d="M 70 65 L 80 80 L 100 60 L 120 80 L 130 65 L 125 90 L 75 90 Z" fill="url(#gD)" />
                     <text x="100" y="125" font-family="'Poppins', sans-serif" font-weight="900" font-size="34" fill="url(#gD)" text-anchor="middle">BT</text>
-                    <text x="100" y="150" font-family="'Poppins', sans-serif" font-weight="600" font-size="12" fill="#FFF" letter-spacing="2" text-anchor="middle">EXPERT</text>
+                    <text x="100" y="150" font-family="'Poppins', sans-serif" font-weight="600" font-size="10" fill="#FFF" letter-spacing="1" text-anchor="middle">PRO EXPERT</text>
                 </svg>
-                <div class="logo-text"><span class="bt">BT</span> <span class="expert">EXPERT</span></div>
+                <div class="logo-text"><span class="bt">BET PRO</span> <span class="expert">EXPERT</span></div>
             </div>
             <i class="fas fa-times close-drawer" onclick="toggleDrawer()"></i>
         </div>
@@ -115,6 +131,7 @@
         <div class="drawer-item" onclick="selectSection('tennis', 3)"><i class="fas fa-table-tennis-paddle-ball"></i> TENNIS</div>
         <div class="drawer-item" onclick="selectSection('calculator', 4)"><i class="fas fa-calculator"></i> CALCULATOR</div>
         <div class="drawer-item" onclick="selectSection('results', 5)"><i class="fas fa-history"></i> RESULTS</div>
+        <div class="drawer-item" onclick="selectSection('contact', 6)"><i class="fab fa-whatsapp"></i> CONTACT ADMIN</div>
     </div>
 
     <div id="loginModal" class="modal">
@@ -170,15 +187,24 @@
                     <polygon points="100,10 170,40 170,110 100,185 30,110 30,40" fill="#111" stroke="url(#gN)" stroke-width="6" />
                     <path d="M 70 65 L 80 80 L 100 60 L 120 80 L 130 65 L 125 90 L 75 90 Z" fill="url(#gN)" />
                     <text x="100" y="125" font-family="'Poppins', sans-serif" font-weight="900" font-size="34" fill="url(#gN)" text-anchor="middle">BT</text>
-                    <text x="100" y="150" font-family="'Poppins', sans-serif" font-weight="600" font-size="12" fill="#FFF" letter-spacing="2" text-anchor="middle">EXPERT</text>
+                    <text x="100" y="150" font-family="'Poppins', sans-serif" font-weight="600" font-size="10" fill="#FFF" letter-spacing="1" text-anchor="middle">PRO EXPERT</text>
                 </svg>
-                <div class="logo-text"><span class="bt">BT</span> <span class="expert">EXPERT</span></div>
+                <div class="logo-text"><span class="bt">BET PRO</span> <span class="expert">EXPERT</span></div>
             </div>
         </div>
         <div id="vipStatus" style="font-size:10px; color:#ff5252; font-weight:900; border:1.5px solid #ff5252; padding:5px 12px; border-radius:20px;" onclick="openModal('loginModal')">VIP LOCKED</div>
     </nav>
 
     <div class="container">
+        <!-- PWA Installation Banner -->
+        <div class="install-banner" id="pwaBanner">
+            <div>
+                <b style="font-size:12px; color:var(--gold);">Install Mobile App</b>
+                <div style="font-size:10px; color:#aaa;">Add to Home Screen for fast access</div>
+            </div>
+            <button class="install-btn" onclick="installApp()">INSTALL</button>
+        </div>
+
         <div id="freetips" class="window-content active"></div>
         <div id="football" class="window-content"></div>
         <div id="cricket" class="window-content"></div>
@@ -294,9 +320,27 @@
         </div>
 
         <div id="results" class="window-content"><div id="resultsList"></div></div>
+
+        <!-- Contact Admin Section -->
+        <div id="contact" class="window-content">
+            <div class="admin-card">
+                <i class="fab fa-whatsapp" style="font-size: 45px; color: #25d366; margin-bottom: 10px;"></i>
+                <h3 style="color: var(--gold); margin: 0 0 10px 0;">CONTACT ADMIN</h3>
+                <p style="font-size: 12px; color: #ccc;">VIP Access Pass, Live Match Updates, ya kisi bhi query ke liye Admin se direct WhatsApp par raabta karein.</p>
+                <a href="https://wa.me/+923461263524?text=Hello%20Admin,%20I%20need%20VIP%20Access%20Pass" target="_blank" class="admin-btn">
+                    <i class="fab fa-whatsapp"></i> CHAT WITH ADMIN
+                </a>
+            </div>
+        </div>
     </div>
 
-    <a href="https://wa.me/+923461263524" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <!-- WhatsApp Floating Button with Label -->
+    <div class="whatsapp-container">
+        <span class="whatsapp-text">VIP ACCESS TO ADMIN</span>
+        <a href="https://wa.me/+923461263524?text=Hello%20Admin,%20I%20need%20VIP%20Access" class="whatsapp-float" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 
     <script>
         let isVip = false;
@@ -305,132 +349,20 @@
 
         const defaultData = {
             freetips: [
-                {
-                    "teams": "Bangladesh W vs Indonesia W",
-                    "status": "7:30 pm",
-                    "load": "Sure 100%",
-                    "info": "FREE TIP",
-                    "tip": "Bangladesh W WIN"
-                },
-                {
-                    "teams": "Kanpur vs Lucknow",
-                    "status": "7:00 PM",
-                    "load": "Indian Local",
-                    "info": "FREE TIP",
-                    "tip": "Lucknow WIN"
-                },
-                {
-                    "teams": "Mohali Kings vs Bathinda Royals",
-                    "status": "6:30 pm",
-                    "load": "Indian Local",
-                    "info": "FREE TIP",
-                    "tip": "Mohali Kings WIN"
-                },
-                {
-                    "teams": "Ripples vs Royals",
-                    "status": "2:00 pm",
-                    "load": "Kerala Cricket",
-                    "info": "FREE TIP",
-                    "tip": "Royals WIN"
-                }
+                { "teams": "Bangladesh W vs Indonesia W", "status": "7:30 pm", "load": "Sure 100%", "info": "FREE TIP", "tip": "Bangladesh W WIN" },
+                { "teams": "Kanpur vs Lucknow", "status": "7:00 PM", "load": "Indian Local", "info": "FREE TIP", "tip": "Lucknow WIN" }
             ],
             football: [
-                {
-                    "teams": "Aston Villa vs Arsenal",
-                    "status": "19:00",
-                    "load": "VIP TIP",
-                    "info": "England - Premier League",
-                    "tip": "Arsenal WIN"
-                },
-                {
-                    "teams": "Lecce vs AS Roma",
-                    "status": "16:30",
-                    "load": "VIP TIP",
-                    "info": "Italy - Serie A",
-                    "tip": "AS Roma WIN"
-                },
-                {
-                    "teams": "Atalanta vs Bologna",
-                    "status": "18:45",
-                    "load": "VIP TIP",
-                    "info": "Italy - Serie A",
-                    "tip": "Atalanta Win Or Draw WIN"
-                },
-                {
-                    "teams": "Barcelona vs Rayo Vallecano",
-                    "status": "19:30",
-                    "load": "VIP TIP",
-                    "info": "Spain - La Liga",
-                    "tip": "Barcelona Win"
-                }
+                { "teams": "Aston Villa vs Arsenal", "status": "19:00", "load": "VIP TIP", "info": "England - Premier League", "tip": "Arsenal WIN" }
             ],
             cricket: [
-                {
-                    "teams": "Knight Riders vs Amazon Warriors",
-                    "status": "  Sep 1. 5:00 am",
-                    "load": "CPL 2026 VIP",
-                    "info": "JACKPOT",
-                    "tip": "Knight Riders WIN"
-                },
-                {
-                    "teams": "Namibia vs Zimbabwe",
-                    "status": "7:30 PM",
-                    "load": "Namibia T20 Tri-Series 2026",
-                    "info": "BIG MATCH",
-                    "tip": "Zimbabwe WIN"
-                },
-                {
-                    "teams": "Thrissur vs Globstars",
-                    "status": "6:15 PM",
-                    "load": "Kerala Cricket League T20 2026",
-                    "info": "SURE TIP",
-                    "tip": "Globstars WIN"
-                }
+                { "teams": "Knight Riders vs Amazon Warriors", "status": "Sep 1. 5:00 am", "load": "CPL 2026 VIP", "info": "JACKPOT", "tip": "Knight Riders WIN" }
             ],
             tennis: [
-                {
-                    "teams": "Alex Michelsen vs Federico Cina",
-                    "status": "Aug 31 8:00 pm",
-                    "load": "Sure 100%",
-                    "info": "USA",
-                    "tip": "Alex Michelsen WIN"
-                },
-                {
-                    "teams": "Emma Navarro vs Lois Boisson",
-                    "status": "Aug 31 3:15 am",
-                    "load": "VIP TIP",
-                    "info": "ATP",
-                    "tip": "Emma Navarro WIN"
-                },
-                {
-                    "teams": "Aleksandar Vukic vs Rei Sakamoto",
-                    "status": " Aug 31 1:42 am",
-                    "load": "WTA VIP",
-                    "info": "WOMEN SINGLE",
-                    "tip": "Rei Sakamoto WIN"
-                }
+                { "teams": "Alex Michelsen vs Federico Cina", "status": "Aug 31 8:00 pm", "load": "Sure 100%", "info": "USA", "tip": "Alex Michelsen WIN" }
             ],
             results: [
-                {
-                    "teams": "England vs Pakistan (Test)",
-                    "tip": "England WIN",
-                    "outcome": "win"
-                },
-                {
-                    "teams": "Sunderland vs Fulham",
-                    "tip": "Sunderland WIN",
-                    "outcome": "win"
-                },
-                {
-                    "teams": "St Kitts vs Barbuda F",
-                    "tip": "Draw",
-                    "outcome": "No loss"
-                },
-                {
-                    "teams": "Nadal vs Zverev",
-                    "tip": "NADAL WIN",
-                    "outcome": "win"
-                }
+                { "teams": "England vs Pakistan (Test)", "tip": "England WIN", "outcome": "win" }
             ]
         };
 
@@ -458,11 +390,11 @@
                     <div class="tip-btn">${isFree ? 'OPEN' : 'VIP'}</div>
                 </div>`;
 
-            document.getElementById('freetips').innerHTML = data.freetips.map(m => render(m, true)).join('');
-            document.getElementById('football').innerHTML = data.football.map(m => render(m, false)).join('');
-            document.getElementById('cricket').innerHTML = data.cricket.map(m => render(m, false)).join('');
-            document.getElementById('tennis').innerHTML = data.tennis.map(m => render(m, false)).join('');
-            document.getElementById('resultsList').innerHTML = data.results.map(m => `
+            document.getElementById('freetips').innerHTML = (data.freetips || []).map(m => render(m, true)).join('');
+            document.getElementById('football').innerHTML = (data.football || []).map(m => render(m, false)).join('');
+            document.getElementById('cricket').innerHTML = (data.cricket || []).map(m => render(m, false)).join('');
+            document.getElementById('tennis').innerHTML = (data.tennis || []).map(m => render(m, false)).join('');
+            document.getElementById('resultsList').innerHTML = (data.results || []).map(m => `
                 <div class="match-card ${m.outcome === 'win' ? 'res-win' : 'res-loss'}">
                     <div class="m-time" style="color:#666">END</div>
                     <div class="m-teams">${m.teams}<br><small style="color:var(--gold); font-size:11px;">Tip: ${m.tip}</small></div>
@@ -472,7 +404,8 @@
 
         async function loadData() {
             try {
-                const res = await fetch('matches.json');
+                // GitHub Pages se cache problem khatam karne ke liye timestamp add kiya
+                const res = await fetch('matches.json?v=' + new Date().getTime());
                 const data = await res.json();
                 if(data.vip_config && data.vip_config.current_pin) {
                     correctVipPin = data.vip_config.current_pin;
@@ -504,7 +437,9 @@
             document.querySelectorAll('.drawer-item').forEach(d => d.classList.remove('active'));
 
             document.getElementById(id).classList.add('active');
-            document.querySelectorAll('.drawer-item')[idx].classList.add('active');
+            if(document.querySelectorAll('.drawer-item')[idx]) {
+                document.querySelectorAll('.drawer-item')[idx].classList.add('active');
+            }
         }
 
         function openModal(id) { document.getElementById(id).style.display = 'block'; }
@@ -631,6 +566,26 @@
             }
 
             openModal('resultModal');
+        }
+
+        /* PWA Prompt Handling */
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('pwaBanner').style.display = 'flex';
+        });
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        document.getElementById('pwaBanner').style.display = 'none';
+                    }
+                    deferredPrompt = null;
+                });
+            }
         }
 
         window.onload = () => { 
