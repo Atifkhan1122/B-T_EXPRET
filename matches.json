@@ -4,62 +4,97 @@
   },
   "freetips": [
     {
-      "teams": "Bangladesh W vs Indonesia W",
-      "status": "7:30 pm",
-      "load": "Sure 100%",
-      "info": "FREE TIP",
-      "tip": "Bangladesh W WIN"
+      "teams": "Araz vs Sabah Baku",
+      "status": "14:00",
+      "load": "Odds: 1.42",
+      "info": "Azerbaijan - Premyer Liqa",
+      "tip": "Sabah Baku WIN"
     },
     {
-      "teams": "Kanpur vs Lucknow",
-      "status": "7:00 PM",
-      "load": "Indian Local",
-      "info": "FREE TIP",
-      "tip": "Lucknow WIN"
+      "teams": "Sumqayit vs Qarabag",
+      "status": "16:15",
+      "load": "Odds: 1.32",
+      "info": "Azerbaijan - Premyer Liqa",
+      "tip": "Qarabag WIN"
     },
     {
-      "teams": "Mohali Kings vs Bathinda Royals",
-      "status": "6:30 pm",
-      "load": "Indian Local",
-      "info": "FREE TIP",
-      "tip": "Mohali Kings WIN"
-    },
-    {
-      "teams": "Ripples vs Royals",
-      "status": "2:00 pm",
-      "load": "Kerala Cricket",
-      "info": "FREE TIP",
-      "tip": "Royals WIN"
+      "teams": "Amedspor vs Trabzonspor",
+      "status": "18:30",
+      "load": "Odds: 1.30",
+      "info": "Turkey - Süper Lig",
+      "tip": "Trabzonspor Win Or Draw"
     }
   ],
   "football": [
     {
       "teams": "Aston Villa vs Arsenal",
       "status": "19:00",
-      "load": "VIP TIP",
+      "load": "Odds: 1.52",
       "info": "England - Premier League",
       "tip": "Arsenal WIN"
     },
     {
       "teams": "Lecce vs AS Roma",
       "status": "16:30",
-      "load": "VIP TIP",
+      "load": "Odds: 1.48",
       "info": "Italy - Serie A",
       "tip": "AS Roma WIN"
     },
     {
-      "teams": "Atalanta vs Bologna",
-      "status": "18:45",
-      "load": "VIP TIP",
-      "info": "Italy - Serie A",
-      "tip": "Atalanta Win Or Draw WIN"
+      "teams": "Benfica vs Estoril",
+      "status": "19:15",
+      "load": "Odds: 1.21",
+      "info": "Portugal - Primeira Liga",
+      "tip": "Benfica WIN"
+    },
+    {
+      "teams": "Braga vs Vitoria Guimaraes",
+      "status": "19:15",
+      "load": "Odds: 1.73",
+      "info": "Portugal - Primeira Liga",
+      "tip": "Braga WIN"
     },
     {
       "teams": "Barcelona vs Rayo Vallecano",
       "status": "19:30",
-      "load": "VIP TIP",
+      "load": "Odds: 1.20",
       "info": "Spain - La Liga",
-      "tip": "Barcelona Win"
+      "tip": "Barcelona WIN"
+    },
+    {
+      "teams": "Hajduk Split vs Lok. Zagreb",
+      "status": "16:30",
+      "load": "Odds: 1.40",
+      "info": "Croatia - HNL",
+      "tip": "Hajduk Split WIN"
+    },
+    {
+      "teams": "Gorica vs Rijeka",
+      "status": "19:00",
+      "load": "Odds: 1.54",
+      "info": "Croatia - HNL",
+      "tip": "Rijeka WIN"
+    },
+    {
+      "teams": "Omonia vs Omonia Aradippou",
+      "status": "17:00",
+      "load": "Odds: 1.18",
+      "info": "Cyprus - 1. Division",
+      "tip": "Omonia WIN"
+    },
+    {
+      "teams": "FC Copenhagen vs Sonderjyske",
+      "status": "17:00",
+      "load": "Odds: 1.34",
+      "info": "Denmark - Superliga",
+      "tip": "FC Copenhagen WIN"
+    },
+    {
+      "teams": "Zamalek vs Petrojet",
+      "status": "17:00",
+      "load": "Odds: 1.62",
+      "info": "Egypt - Premier League",
+      "tip": "Zamalek WIN"
     }
   ],
   "cricket": [
@@ -110,8 +145,8 @@
   ],
   "results": [
     {
-      "teams": "England vs Pakistan (Test)",
-      "tip": "England WIN",
+      "teams": "Ripples vs Royals",
+      "tip": "Royals WIN",
       "outcome": "win"
     },
     {
