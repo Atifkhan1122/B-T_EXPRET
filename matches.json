@@ -1,105 +1,135 @@
-{
-    "vip_config": {
-    "current_pin": "7798"
-  },
-  "freetips": [
-    {
-      "status": "FREE",
-      "teams": "ENG VS PAK",
-      "tip": "ENGLAND WIN"
-    },
-    {
-      "status": "FREE",
-      "teams": "Lucknow Vs Gorakhpur",
-      "tip": "Gorakhpur Lions WIN"
-    }
-  ],
-  "football": [
-    {
-      "status": "LIVE",
-      "teams": "CAGLIARI VS INTER ",
-      "tip": "INTER WIN",
-      "load": "90%",
-      "info": "Safe"
-    },
-    {
-      "status": "20:30",
-      "teams": "BAYERN VS ROYALE UNION",
-      "tip": "BAYERN -1.5 WINS",
-      "load": "75%",
-      "info": "Premium"
-    },
-    {
-      "status": "23:30",
-      "teams": "FARM vs AKUREYRI",
-      "tip": "FARM WIN OR DRAW",
-      "load": "High",
-      "info": "VIP"
-    }
-  ],
-  "cricket": [
-    {
-      "status": "31 Aug 2026, 04:00 am",
-      "teams": "St Kitts & Nevis Patriots vs Antigua & Barbuda Falcons",
-      "tip": "St Kitts & Nevis Patriots WIN",
-      "load": "100%",
-      "info": "Sure Shot"
-    },
-    {
-      "status": "14:00",
-      "teams": "SCOTLAND W VS NETHERLANDS W",
-      "tip": "NETHERLANDS W WIN",
-      "load": "Live",
-      "info": "Premium"
-    },
-    {
-      "status": "7:00.pm",
-      "teams": "Noida vs Meerut",
-      "tip": "Meerut WIN",
-      "load": "Jackpot",
-      "info": "Golden"
-    }
-  ],
-  "tennis": [
-    {
-      "status": "17:00",
-      "teams": "Prizmic vs Shevchenko Alexander",
-      "tip": "Prizmic Dino WIN",
-      "load": "Low",
-      "info": "Single"
-    },
-    {
-      "status": "17:00",
-      "teams": "Wu Yibing vs Walton Adam",
-      "tip": "Walton Adam WIN",
-      "load": "High",
-      "info": "VVIP"
-    }
-    {
-      "status": "17:00",
-      "teams": "Shimabukuro Sho vs Rinderknech Arthur",
-      "tip": "Rinderknech Arthur WIN",,
-      "load": "High",
-      "info": "VVIP"
-    }
-  ],
-  "results": [
-    {
-      "teams": "Trinbago Knight Riders vs Jamaica Kingsmen",
-      "tip": "Jamaica Kingsmen WIN",
-      "outcome": "win"
-    },
-    {
-      "teams": "SLW vs UAEW",
-      "tip": "SLW WIN",
-      "outcome": "win"
-    },
-    {
-      "teams": "Manchester City vsCrystal Palace",
-      "tip": "Manchester City",
-      "outcome": "win"
-    }
-  ]
-}
+<script>
+        let isVip = false;
+        let currentIdx = 0;
+        let correctVipPin = "7890"; 
 
-
+        const defaultData = {
+            freetips: [
+                {
+                    "teams": "Bangladesh W vs Indonesia W",
+                    "status": "7:30 pm",
+                    "load": "Sure 100%",
+                    "info": "FREE TIP",
+                    "tip": "Bangladesh W WIN"
+                },
+                {
+                    "teams": "Kanpur vs Lucknow",
+                    "status": "7:00 PM",
+                    "load": "Indian Local",
+                    "info": "FREE TIP",
+                    "tip": "Lucknow WIN"
+                },
+                {
+                    "teams": "Mohali Kings vs Bathinda Royals",
+                    "status": "6:30 pm",
+                    "load": "Indian Local",
+                    "info": "FREE TIP",
+                    "tip": "Mohali Kings WIN"
+                },
+                {
+                    "teams": "Ripples vs Royals",
+                    "status": "2:00 pm",
+                    "load": "Kerala Cricket",
+                    "info": "FREE TIP",
+                    "tip": "Royals WIN"
+                }
+            ],
+            football: [
+                {
+                    "teams": "Aston Villa vs Arsenal",
+                    "status": "19:00",
+                    "load": "VIP TIP",
+                    "info": "England - Premier League",
+                    "tip": "Arsenal WIN"
+                },
+                {
+                    "teams": "Lecce vs AS Roma",
+                    "status": "16:30",
+                    "load": "VIP TIP",
+                    "info": "Italy - Serie A",
+                    "tip": "AS Roma WIN"
+                },
+                {
+                    "teams": "Atalanta vs Bologna",
+                    "status": "18:45",
+                    "load": "VIP TIP",
+                    "info": "Italy - Serie A",
+                    "tip": "Atalanta Win Or Draw WIN"
+                },
+                {
+                    "teams": "Barcelona vs Rayo Vallecano",
+                    "status": "19:30",
+                    "load": "VIP TIP",
+                    "info": "Spain - La Liga",
+                    "tip": "Barcelona Win"
+                }
+            ],
+            cricket: [
+                {
+                    "teams": "Knight Riders vs Amazon Warriors",
+                    "status": "  Sep 1. 5:00 am",
+                    "load": "CPL 2026 VIP",
+                    "info": "JACKPOT",
+                    "tip": "Knight Riders WIN"
+                },
+                {
+                    "teams": "Namibia vs Zimbabwe",
+                    "status": "7:30 PM",
+                    "load": "Namibia T20 Tri-Series 2026",
+                    "info": "BIG MATCH",
+                    "tip": "Zimbabwe WIN"
+                },
+                {
+                    "teams": "Thrissur vs Globstars",
+                    "status": "6:15 PM",
+                    "load": "Kerala Cricket League T20 2026",
+                    "info": "SURE TIP",
+                    "tip": "Globstars WIN"
+                }
+            ],
+            tennis: [
+                {
+                    "teams": "Alex Michelsen vs Federico Cina",
+                    "status": "Aug 31 8:00 pm",
+                    "load": "Sure 100%",
+                    "info": "USA",
+                    "tip": "Alex Michelsen WIN"
+                },
+                {
+                    "teams": "Emma Navarro vs Lois Boisson",
+                    "status": "Aug 31 3:15 am",
+                    "load": "VIP TIP",
+                    "info": "ATP",
+                    "tip": "Emma Navarro WIN"
+                },
+                {
+                    "teams": "Aleksandar Vukic vs Rei Sakamoto",
+                    "status": " Aug 31 1:42 am",
+                    "load": "WTA VIP",
+                    "info": "WOMEN SINGLE",
+                    "tip": "Rei Sakamoto WIN"
+                }
+            ],
+            results: [
+                {
+                    "teams": "England vs Pakistan (Test)",
+                    "tip": "England WIN",
+                    "outcome": "win"
+                },
+                {
+                    "teams": "Sunderland vs Fulham",
+                    "tip": "Sunderland WIN",
+                    "outcome": "win"
+                },
+                {
+                    "teams": "St Kitts vs Barbuda F",
+                    "tip": "Draw",
+                    "outcome": "No loss"
+                },
+                {
+                    "teams": "Nadal vs Zverev",
+                    "tip": "NADAL WIN",
+                    "outcome": "win"
+                }
+            ]
+        };
