@@ -1,10 +1,4 @@
-<script>
-        let isVip = false;
-        let currentIdx = 0;
-        let correctVipPin = "7890"; 
 
-        const defaultData = {
-            freetips: [
                 {
                     "teams": "Bangladesh W vs Indonesia W",
                     "status": "7:30 pm",
