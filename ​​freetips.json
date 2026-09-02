@@ -1,9 +1,8 @@
 [
   {
-    "status": "LIVE 14:00",
-    "teams": "TEAM A VS TEAM B",
-    "load": "FREE TIP",
-    "info": "MATCH INFO",
-    "tip": "WINNER NAME"
+    "teams": "Pakistan vs India",
+    "tip": "Pakistan Win",
+    "time": "7:00 PM",
+    "league": "Asia Cup"
   }
 ]
