@@ -1,86 +1,47 @@
 [
   {
-    "teams": "Samtredia vs Iberia 1999",
-    "tip": "2",
-    "time": "14:30",
-    "odds": "1.52",
-    "league": "Georgia - David Kipiani Cup - 1/8-finals"
+    "teams": "Minerul Lupeni vs UTA Arad",
+    "tip": "UTA ARAD",
+    "odds": "1.54",
+    "country": "Romania",
+    "flag": "🇷🇴",
+    "date": "02 September",
+    "info": "🇷🇴 Romania, 02 September"
   },
   {
-    "teams": "St. Truiden vs Royale Union SG",
-    "tip": "X2",
-    "time": "18:30",
-    "odds": "1.30",
-    "league": "Belgium - First Division A"
+    "teams": "H. Beer Sheva vs H. Haifa",
+    "tip": "H.BEER SHEVA",
+    "odds": "1.44",
+    "country": "Israel",
+    "flag": "🇮🇱",
+    "date": "02 September",
+    "info": "🇮🇱 Israel, 02 September"
   },
   {
-    "teams": "VfL Osnabruck vs Bayern Munich",
-    "tip": "2",
-    "time": "N/A",
-    "odds": "N/A",
-    "league": "Germany - DFB Pokal - 1/32-finals"
-  },
-  {
-    "teams": "Din. Minsk vs Naftan",
-    "tip": "1",
-    "time": "17:30",
-    "odds": "1.18",
-    "league": "Belarus - Premier League"
-  },
-  {
-    "teams": "Borac Banja Luka vs Zeljeznicar",
-    "tip": "1",
-    "time": "18:30",
-    "odds": "1.36",
-    "league": "Bosnia and Herzegovina - Premijer Liga"
+    "teams": "West Brom vs Charlton",
+    "tip": "OVER 1.5",
+    "odds": "1.37",
+    "country": "England",
+    "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "date": "02 September",
+    "info": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 England, 02 September"
   },
   {
     "teams": "Slavia Sofia vs Levski Sofia",
-    "tip": "2",
-    "time": "17:00",
-    "odds": "1.36",
-    "league": "Bulgaria - First League"
+    "tip": "LEVSKI",
+    "odds": "1.32",
+    "country": "Bulgaria",
+    "flag": "🇧🇬",
+    "date": "02 September",
+    "info": "🇧🇬 Bulgaria, 02 September"
   },
   {
-    "teams": "Aarhus vs Midtjylland",
-    "tip": "2",
-    "time": "18:00",
-    "odds": "1.34",
-    "league": "Denmark - Superliga"
-  },
-  {
-    "teams": "AEL Larissa vs Olympiacos Piraeus",
-    "tip": "2",
-    "time": "17:00",
-    "odds": "1.18",
-    "league": "Greece - Cup - Greek Cup"
-  },
-  {
-    "teams": "PAOK vs OFI Crete",
-    "tip": "1",
-    "time": "19:15",
-    "odds": "1.40",
-    "league": "Greece - Cup - Greek Cup"
-  },
-  {
-    "teams": "H. Beer Sheva vs Hapoel Haifa",
-    "tip": "1",
-    "time": "17:00",
-    "odds": "1.45",
-    "league": "Israel - Ligat Ha'al"
-  },
-  {
-    "teams": "Zenit vs Dynamo Makhachkala",
-    "tip": "1",
-    "time": "15:30",
-    "odds": "1.40",
-    "league": "Russia - Cup - Group Stage"
-  },
-  {
-    "teams": "Mamelodi Sundowns vs Milford FC",
-    "tip": "1",
-    "time": "17:30",
-    "odds": "1.22",
-    "league": "South Africa - Play-offs 1/2"
+    "teams": "Birmingham vs Southampton",
+    "tip": "1 - 1",
+    "odds": "N/A",
+    "country": "",
+    "flag": "",
+    "date": "",
+    "info": "Result / Live"
   }
 ]
