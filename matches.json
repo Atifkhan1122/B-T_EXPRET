@@ -4,103 +4,89 @@
   },
   "freetips": [
     {
-      "teams": "Araz vs Sabah Baku",
-      "status": "14:00",
-      "load": "Odds: 1.42",
-      "info": "Azerbaijan - Premyer Liqa",
-      "tip": "Sabah Baku WIN"
+      "teams": "Samtredia vs Iberia 1999",
+      "status": "14:30",
+      "load": "Odds: 1.52",
+      "info": "Georgia - David Kipiani Cup",
+      "tip": "Iberia 1999 WIN"
     },
     {
-      "teams": "Sumqayit vs Qarabag",
-      "status": "16:15",
-      "load": "Odds: 1.32",
-      "info": "Azerbaijan - Premyer Liqa",
-      "tip": "Qarabag WIN"
+      "teams": "Zenit vs Dynamo Makhachkala",
+      "status": "15:30",
+      "load": "Odds: 1.40",
+      "info": "Russia - Cup",
+      "tip": "Zenit WIN"
     },
     {
-      "teams": "Amedspor vs Trabzonspor",
+      "teams": "St. Truiden vs Royale Union SG",
       "status": "18:30",
       "load": "Odds: 1.30",
-      "info": "Turkey - Süper Lig",
-      "tip": "Trabzonspor Win Or Draw"
+      "info": "Belgium - First Division A",
+      "tip": "Royale Union SG Win Or Draw"
     }
   ],
   "football": [
     {
-      "teams": "Aston Villa vs Arsenal",
-      "status": "19:00",
-      "load": "Odds: 1.52",
-      "info": "England - Premier League",
-      "tip": "Arsenal WIN"
-    },
-    {
-      "teams": "Lecce vs AS Roma",
-      "status": "16:30",
-      "load": "Odds: 1.48",
-      "info": "Italy - Serie A",
-      "tip": "AS Roma WIN"
-    },
-    {
-      "teams": "Benfica vs Estoril",
-      "status": "19:15",
-      "load": "Odds: 1.21",
-      "info": "Portugal - Primeira Liga",
-      "tip": "Benfica WIN"
-    },
-    {
-      "teams": "Braga vs Vitoria Guimaraes",
-      "status": "19:15",
-      "load": "Odds: 1.73",
-      "info": "Portugal - Primeira Liga",
-      "tip": "Braga WIN"
-    },
-    {
-      "teams": "Barcelona vs Rayo Vallecano",
-      "status": "19:30",
-      "load": "Odds: 1.20",
-      "info": "Spain - La Liga",
-      "tip": "Barcelona WIN"
-    },
-    {
-      "teams": "Hajduk Split vs Lok. Zagreb",
-      "status": "16:30",
-      "load": "Odds: 1.40",
-      "info": "Croatia - HNL",
-      "tip": "Hajduk Split WIN"
-    },
-    {
-      "teams": "Gorica vs Rijeka",
-      "status": "19:00",
-      "load": "Odds: 1.54",
-      "info": "Croatia - HNL",
-      "tip": "Rijeka WIN"
-    },
-    {
-      "teams": "Omonia vs Omonia Aradippou",
-      "status": "17:00",
+      "teams": "Din. Minsk vs Naftan",
+      "status": "17:30",
       "load": "Odds: 1.18",
-      "info": "Cyprus - 1. Division",
-      "tip": "Omonia WIN"
+      "info": "Belarus - Premier League",
+      "tip": "Din. Minsk WIN"
     },
     {
-      "teams": "FC Copenhagen vs Sonderjyske",
+      "teams": "Borac Banja Luka vs Zeljeznicar",
+      "status": "18:30",
+      "load": "Odds: 1.36",
+      "info": "Bosnia - Premijer Liga",
+      "tip": "Borac Banja Luka WIN"
+    },
+    {
+      "teams": "Slavia Sofia vs Levski Sofia",
       "status": "17:00",
+      "load": "Odds: 1.36",
+      "info": "Bulgaria - First League",
+      "tip": "Levski Sofia WIN"
+    },
+    {
+      "teams": "Aarhus vs Midtjylland",
+      "status": "18:00",
       "load": "Odds: 1.34",
       "info": "Denmark - Superliga",
-      "tip": "FC Copenhagen WIN"
+      "tip": "Midtjylland WIN"
     },
     {
-      "teams": "Zamalek vs Petrojet",
+      "teams": "AEL Larissa vs Olympiacos Piraeus",
       "status": "17:00",
-      "load": "Odds: 1.62",
-      "info": "Egypt - Premier League",
-      "tip": "Zamalek WIN"
+      "load": "Odds: 1.18",
+      "info": "Greece - Greek Cup",
+      "tip": "Olympiacos Piraeus WIN"
+    },
+    {
+      "teams": "PAOK vs OFI Crete",
+      "status": "19:15",
+      "load": "Odds: 1.40",
+      "info": "Greece - Greek Cup",
+      "tip": "PAOK WIN"
+    },
+    {
+      "teams": "H. Beer Sheva vs Hapoel Haifa",
+      "status": "17:00",
+      "load": "Odds: 1.45",
+      "info": "Israel - Ligat Ha'al",
+      "tip": "H. Beer Sheva WIN"
+    },
+    {
+      "teams": "Mamelodi Sundowns vs Milford FC",
+      "status": "17:30",
+      "load": "Odds: 1.22",
+      "info": "South Africa - Play-offs",
+      "tip": "Mamelodi Sundowns WIN"
     }
   ],
   "cricket": [
     {
       "teams": "Knight Riders vs Amazon Warriors",
-      "status": "Sep 1. 5:00 am",
+      "status": "Sep 2. 5:00 am",
       "load": "CPL 2026 VIP",
       "info": "JACKPOT",
       "tip": "Knight Riders WIN"
@@ -123,45 +109,38 @@
   "tennis": [
     {
       "teams": "Alex Michelsen vs Federico Cina",
-      "status": "Aug 31 8:00 pm",
+      "status": "Sep 2 8:00 pm",
       "load": "Sure 100%",
       "info": "USA",
       "tip": "Alex Michelsen WIN"
     },
     {
       "teams": "Emma Navarro vs Lois Boisson",
-      "status": "Aug 31 3:15 am",
+      "status": "Sep 2 3:15 am",
       "load": "VIP TIP",
       "info": "ATP",
       "tip": "Emma Navarro WIN"
-    },
-    {
-      "teams": "Aleksandar Vukic vs Rei Sakamoto",
-      "status": "Aug 31 1:42 am",
-      "load": "WTA VIP",
-      "info": "WOMEN SINGLE",
-      "tip": "Rei Sakamoto WIN"
     }
   ],
   "results": [
     {
+      "teams": "Aston Villa vs Arsenal",
+      "tip": "Arsenal WIN",
+      "outcome": "win"
+    },
+    {
+      "teams": "Barcelona vs Rayo Vallecano",
+      "tip": "Barcelona WIN",
+      "outcome": "win"
+    },
+    {
+      "teams": "Lecce vs AS Roma",
+      "tip": "AS Roma WIN",
+      "outcome": "win"
+    },
+    {
       "teams": "Ripples vs Royals",
       "tip": "Royals WIN",
-      "outcome": "win"
-    },
-    {
-      "teams": "Sunderland vs Fulham",
-      "tip": "Sunderland WIN",
-      "outcome": "win"
-    },
-    {
-      "teams": "St Kitts vs Barbuda F",
-      "tip": "Draw",
-      "outcome": "No loss"
-    },
-    {
-      "teams": "Nadal vs Zverev",
-      "tip": "NADAL WIN",
       "outcome": "win"
     }
   ]
