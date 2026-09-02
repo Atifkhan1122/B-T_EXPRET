@@ -1,16 +1,9 @@
 [
   {
-    "teams": "Samtredia vs Iberia 1999",
-    "status": "14:30",
-    "load": "Odds: 1.52",
-    "info": "Georgia - David Kipiani Cup",
-    "tip": "Iberia 1999 WIN"
-  },
-  {
-    "teams": "Zenit vs Dynamo Makhachkala",
-    "status": "15:30",
-    "load": "Odds: 1.40",
-    "info": "Russia - Cup",
-    "tip": "Zenit WIN"
+    "status": "LIVE 14:00",
+    "teams": "TEAM A VS TEAM B",
+    "load": "FREE TIP",
+    "info": "MATCH INFO",
+    "tip": "WINNER NAME"
   }
 ]
