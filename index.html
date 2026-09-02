@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>BET PRO EXPERT | VIP Portal</title>
     
-    <!-- App / Manifest Settings -->
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#ffd700">
 
@@ -23,7 +22,6 @@
             --theme-color: #ffd700;
         }
         
-        /* Dynamic VIP Unlocked Theme Class */
         body.vip-active {
             --theme-color: #00e676;
         }
@@ -36,7 +34,6 @@
         .nav-left { display: flex; align-items: center; gap: 12px; }
         .menu-toggle { font-size: 22px; color: var(--theme-color); cursor: pointer; transition: 0.3s; }
         
-        /* Brand Logo Styling */
         .brand-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
         .logo-text { font-weight: 800; font-size: 15px; text-transform: uppercase; letter-spacing: 1px; }
         .logo-text .bt { color: var(--theme-color); transition: 0.4s; }
@@ -118,13 +115,13 @@
         /* Install App Box */
         .install-box { background: linear-gradient(135deg, #1f1f1f, #0d0d0d); border: 1px solid var(--theme-color); border-radius: 14px; padding: 12px 15px; margin-bottom: 15px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
         .install-btn-nav { background: var(--theme-color); color: #000; border: none; padding: 8px 14px; border-radius: 8px; font-weight: 800; font-size: 11px; cursor: pointer; display: flex; align-items: center; gap: 5px; }
+        .no-data { text-align: center; color: #888; font-size: 12px; padding: 20px; }
     </style>
 </head>
 <body>
 
     <div class="overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
     
-    <!-- Navigation Drawer -->
     <div class="side-drawer" id="sideDrawer">
         <div class="drawer-header">
             <div class="brand-logo">
@@ -142,7 +139,6 @@
         <div class="drawer-item" onclick="selectSection('contact', 6)"><i class="fab fa-whatsapp"></i> CONTACT ADMIN</div>
     </div>
 
-    <!-- Modals -->
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <h3 style="color:var(--theme-color)">VIP UNLOCK</h3>
@@ -182,18 +178,16 @@
         </div>
     </div>
 
-    <!-- App Install Guide Modal -->
     <div id="installGuideModal" class="modal">
         <div class="modal-content" style="text-align: left;">
             <h3 style="color:var(--theme-color); text-align:center; margin-top:0;">Mobile App Install Guide</h3>
-            <p style="font-size:12px; color:#ccc;"><b>Android (Chrome):</b><br>1. Upar 3 Dots <b>(⋮)</b> menu par click karein.<br>2. <b>"Add to Home screen"</b> ya <b>"Install App"</b> choose karein.</p>
+            <p style="font-size:12px; color:#ccc;"><b>Android (Chrome):</b><br>1. Menu <b>(⋮)</b> click karein.<br>2. <b>"Add to Home screen"</b> choose karein.</p>
             <hr style="border-color:#333;">
-            <p style="font-size:12px; color:#ccc;"><b>iPhone (Safari):</b><br>1. Niche Share button <b>(⎋)</b> par click karein.<br>2. <b>"Add to Home Screen"</b> choose karein.</p>
+            <p style="font-size:12px; color:#ccc;"><b>iPhone (Safari):</b><br>1. Share <b>(⎋)</b> click karein.<br>2. <b>"Add to Home Screen"</b> choose karein.</p>
             <button onclick="closeModal('installGuideModal')" class="tip-btn" style="width:100%; margin-top:10px; color:#000;">OKAY</button>
         </div>
     </div>
 
-    <!-- Top Navigation -->
     <nav>
         <div class="nav-left">
             <i class="fas fa-bars menu-toggle" onclick="toggleDrawer()"></i>
@@ -207,13 +201,9 @@
         </div>
     </nav>
 
-    <!-- Main Content Area -->
     <div class="container">
-        
-        <!-- Live Search Bar -->
         <input type="text" class="search-box" id="matchSearch" placeholder="🔍 Search Team or Match..." onkeyup="filterMatches()">
 
-        <!-- App Install Option -->
         <div class="install-box">
             <div>
                 <b style="font-size:12px; color:var(--theme-color);">BET PRO EXPERT App</b>
@@ -229,7 +219,6 @@
         <div id="cricket" class="window-content"></div>
         <div id="tennis" class="window-content"></div>
 
-        <!-- Calculator Section -->
         <div id="calculator" class="window-content">
             <div class="calc-card">
                 <h4 style="color:var(--theme-color); text-align:center; margin-bottom:10px;">Format & Teams</h4>
@@ -341,7 +330,6 @@
 
         <div id="results" class="window-content"><div id="resultsList"></div></div>
 
-        <!-- Contact Admin Section -->
         <div id="contact" class="window-content">
             <div class="admin-card">
                 <i class="fab fa-whatsapp" style="font-size: 50px; color: #25d366; margin-bottom: 10px;"></i>
@@ -354,7 +342,6 @@
         </div>
     </div>
 
-    <!-- WhatsApp Floating Button -->
     <div class="whatsapp-container">
         <span class="whatsapp-text">VIP ACCESS TO ADMIN</span>
         <a href="https://wa.me/+923461263524?text=Hello%20Admin,%20I%20need%20VIP%20Access" class="whatsapp-float" target="_blank">
@@ -365,7 +352,7 @@
     <script>
         let isVip = false;
         let currentIdx = 0;
-        let correctVipPin = "7890"; // Default Fallback PIN
+        let correctVipPin = "7890"; // Fallback PIN
         let deferredPrompt = null;
 
         function toggleDrawer() {
@@ -385,17 +372,20 @@
 
         function renderMatches(data) {
             const renderMatch = (m, isFree) => {
-                let safeTeams = escapeStr(m.teams);
-                let safeTip = escapeStr(m.tip);
-                
+                let safeTeams = escapeStr(m.teams || (m.home && m.away ? m.home + " vs " + m.away : 'Match'));
+                let safeTip = escapeStr(m.tip || m.prediction || 'No Tip');
+                let timeStr = m.status || m.time || 'LIVE';
+                let loadStr = m.load || (m.odds ? 'Odds: ' + m.odds : '');
+                let infoStr = m.info || m.league || '';
+
                 return `
                 <div class="match-card" onclick="${isFree ? `showTip('${safeTeams}', '${safeTip}')` : `handleVip('${safeTeams}', '${safeTip}')`}">
-                    <div class="m-time">${m.status || 'LIVE'}</div>
+                    <div class="m-time">${timeStr}</div>
                     <div>
-                        <div class="m-teams">${m.teams || ''}</div>
+                        <div class="m-teams">${safeTeams}</div>
                         <div style="padding-left:10px;">
-                            ${m.load ? `<span class="tag ${!isFree ? 'vip-tag' : ''}">${m.load}</span>` : ''}
-                            ${m.info ? `<span class="tag">${m.info}</span>` : ''}
+                            ${loadStr ? `<span class="tag ${!isFree ? 'vip-tag' : ''}">${loadStr}</span>` : ''}
+                            ${infoStr ? `<span class="tag">${infoStr}</span>` : ''}
                         </div>
                     </div>
                     <div class="tip-btn">${isFree ? 'OPEN' : 'VIP'}</div>
@@ -403,9 +393,9 @@
             };
 
             const renderResult = (m) => {
-                let outcomeLower = (m.outcome || '').toLowerCase();
+                let outcomeLower = (m.outcome || m.result || 'WON').toLowerCase();
                 let badgeClass = 'badge-win';
-                let outcomeText = (m.outcome || 'WON').toUpperCase();
+                let outcomeText = (m.outcome || m.result || 'WON').toUpperCase();
 
                 if (outcomeLower.includes('loss') || outcomeLower.includes('lose')) {
                     badgeClass = 'badge-loss';
@@ -414,11 +404,13 @@
                     badgeClass = 'badge-draw';
                 }
 
+                let safeTeams = m.teams || (m.home && m.away ? m.home + " vs " + m.away : 'Match');
+
                 return `
                 <div class="match-card">
                     <div class="m-time" style="color:#777;">END</div>
                     <div>
-                        <div class="m-teams">${m.teams || ''}</div>
+                        <div class="m-teams">${safeTeams}</div>
                         <div style="padding-left:10px;">
                             <span class="tag" style="border-color:var(--theme-color); color:var(--theme-color);">Tip: ${m.tip || ''}</span>
                         </div>
@@ -427,43 +419,75 @@
                 </div>`;
             };
 
-            document.getElementById('freetips').innerHTML = (data.freetips || []).map(m => renderMatch(m, true)).join('');
-            document.getElementById('football').innerHTML = (data.football || []).map(m => renderMatch(m, false)).join('');
-            document.getElementById('cricket').innerHTML = (data.cricket || []).map(m => renderMatch(m, false)).join('');
-            document.getElementById('tennis').innerHTML = (data.tennis || []).map(m => renderMatch(m, false)).join('');
-            document.getElementById('resultsList').innerHTML = (data.results || []).map(m => renderResult(m)).join('');
+            const fillContainer = (elementId, arrayData, renderFn) => {
+                const el = document.getElementById(elementId);
+                if (arrayData && Array.isArray(arrayData) && arrayData.length > 0) {
+                    el.innerHTML = arrayData.map(renderFn).join('');
+                } else {
+                    el.innerHTML = `<div class="no-data">No Matches Available</div>`;
+                }
+            };
+
+            fillContainer('freetips', data.freetips, (m) => renderMatch(m, true));
+            fillContainer('football', data.football, (m) => renderMatch(m, false));
+            fillContainer('cricket', data.cricket, (m) => renderMatch(m, false));
+            fillContainer('tennis', data.tennis, (m) => renderMatch(m, false));
+            
+            const resEl = document.getElementById('resultsList');
+            if (data.results && Array.isArray(data.results) && data.results.length > 0) {
+                resEl.innerHTML = data.results.map(renderResult).join('');
+            } else {
+                resEl.innerHTML = `<div class="no-data">No Results Available</div>`;
+            }
+        }
+
+        async function fetchSafeJSON(filename) {
+            try {
+                const timestamp = new Date().getTime();
+                const res = await fetch(`${filename}?v=${timestamp}`);
+                if (!res.ok) return [];
+                const data = await res.json();
+                return Array.isArray(data) ? data : (data.matches || data.data || []);
+            } catch (e) {
+                console.warn(`Failed to fetch ${filename}:`, e);
+                return [];
+            }
         }
 
         async function loadData() {
             const timestamp = new Date().getTime();
+            
+            // Load PIN
             try {
-                // Fetch PIN Code from pin.json
-                fetch('pin.json?v=' + timestamp)
-                    .then(r => r.json())
-                    .then(data => { if(data.vip_pin) correctVipPin = String(data.vip_pin); })
-                    .catch(() => {});
-
-                // Fetching all match JSON files in parallel
-                const [freeRes, footRes, cricRes, tenRes, resRes] = await Promise.all([
-                    fetch('freetips.json?v=' + timestamp).then(r => r.json()).catch(() => []),
-                    fetch('football.json?v=' + timestamp).then(r => r.json()).catch(() => []),
-                    fetch('cricket.json?v=' + timestamp).then(r => r.json()).catch(() => []),
-                    fetch('tennis.json?v=' + timestamp).then(r => r.json()).catch(() => []),
-                    fetch('results.json?v=' + timestamp).then(r => r.json()).catch(() => [])
-                ]);
-
-                const combinedData = {
-                    freetips: Array.isArray(freeRes) ? freeRes : [],
-                    football: Array.isArray(footRes) ? footRes : [],
-                    cricket: Array.isArray(cricRes) ? cricRes : [],
-                    tennis: Array.isArray(tenRes) ? tenRes : [],
-                    results: Array.isArray(resRes) ? resRes : []
-                };
-
-                renderMatches(combinedData);
+                const pinRes = await fetch(`pin.json?v=${timestamp}`);
+                if (pinRes.ok) {
+                    const pinData = await pinRes.json();
+                    if (pinData && pinData.vip_pin) {
+                        correctVipPin = String(pinData.vip_pin);
+                    }
+                }
             } catch (e) {
-                console.log("Data loading error:", e);
+                console.log("PIN Fetch failed:", e);
             }
+
+            // Load all json files matching GitHub screenshot file names exactly
+            const [freeRes, footRes, cricRes, tenRes, resRes] = await Promise.all([
+                fetchSafeJSON('freetips.json'),
+                fetchSafeJSON('football.json'),
+                fetchSafeJSON('cricket.json'),
+                fetchSafeJSON('tennis.json'),
+                fetchSafeJSON('results.json')
+            ]);
+
+            const combinedData = {
+                freetips: freeRes,
+                football: footRes,
+                cricket: cricRes,
+                tennis: tenRes,
+                results: resRes
+            };
+
+            renderMatches(combinedData);
         }
 
         function verifyLogin() { 
@@ -624,7 +648,6 @@
             openModal('resultModal');
         }
 
-        /* App Installation Handling */
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             deferredPrompt = e;
@@ -633,9 +656,7 @@
         function triggerAppInstall() {
             if (deferredPrompt) {
                 deferredPrompt.prompt();
-                deferredPrompt.userChoice.then((choiceResult) => {
-                    deferredPrompt = null;
-                });
+                deferredPrompt.userChoice.then(() => { deferredPrompt = null; });
             } else {
                 openModal('installGuideModal');
             }
