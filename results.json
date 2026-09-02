@@ -1,1 +1,7 @@
-results.json
+[
+  {
+    "teams": "ENG VS AUS",
+    "tip": "ENGLAND WIN",
+    "outcome": "WON"
+  }
+]
