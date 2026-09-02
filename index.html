@@ -38,7 +38,6 @@
         
         /* Brand Logo Styling */
         .brand-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
-        .logo-icon { width: 32px; height: 32px; }
         .logo-text { font-weight: 800; font-size: 15px; text-transform: uppercase; letter-spacing: 1px; }
         .logo-text .bt { color: var(--theme-color); transition: 0.4s; }
         .logo-text .expert { color: #ffffff; }
@@ -57,19 +56,19 @@
 
         .container { padding: 15px; max-width: 600px; margin: auto; }
 
-        /* Search Bar Upgrade */
+        /* Search Bar */
         .search-box { width: 100%; padding: 12px 15px; border-radius: 12px; background: #121212; border: 1px solid #333; color: #fff; margin-bottom: 15px; font-size: 13px; outline: none; transition: 0.3s; }
         .search-box:focus { border-color: var(--theme-color); box-shadow: 0 0 10px rgba(0,230,118,0.2); }
 
         /* Match Cards */
-        .match-card { background: var(--card-bg); border-radius: 16px; padding: 16px; margin-bottom: 12px; display: grid; grid-template-columns: 75px 1fr 85px; align-items: center; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 6px 14px rgba(0,0,0,0.4); transition: transform 0.2s; }
+        .match-card { background: var(--card-bg); border-radius: 16px; padding: 16px; margin-bottom: 12px; display: grid; grid-template-columns: 75px 1fr 85px; align-items: center; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 6px 14px rgba(0,0,0,0.4); transition: transform 0.2s; cursor: pointer; }
         .match-card:active { transform: scale(0.98); }
         .m-time { font-size: 11px; font-weight: 800; color: var(--theme-color); text-align: center; border-right: 1.5px solid #333; padding-right: 8px; }
         .m-teams { font-weight: 600; font-size: 13.5px; color: #f0f0f0; padding: 0 10px; line-height: 1.35; }
         .tag { font-size: 8px; background: rgba(255,255,255,0.05); color: #ccc; padding: 3px 7px; border-radius: 6px; border: 0.5px solid #444; font-weight: bold; margin-right: 4px; display: inline-block; margin-top: 4px; }
         .tag.vip-tag { border-color: var(--theme-color); color: var(--theme-color); }
 
-        /* Buttons & Dynamic Outcome Badges */
+        /* Buttons & Badges */
         .tip-btn { background: linear-gradient(180deg, var(--gold), var(--dark-gold)); color: #000; font-weight: 800; font-size: 10px; padding: 10px 4px; border-radius: 10px; text-align: center; border: 1px solid #fff; cursor: pointer; text-transform: uppercase; }
         body.vip-active .tip-btn { background: linear-gradient(180deg, #00e676, #00a855); }
 
@@ -366,7 +365,7 @@
     <script>
         let isVip = false;
         let currentIdx = 0;
-        let correctVipPin = "7890"; 
+        let correctVipPin = "7890"; // Default Fallback PIN
         let deferredPrompt = null;
 
         function toggleDrawer() {
@@ -379,13 +378,21 @@
             openWindow(id, idx);
         }
 
+        function escapeStr(str) {
+            if (!str) return '';
+            return str.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+        }
+
         function renderMatches(data) {
-            // Live Match Renderer
-            const renderMatch = (m, isFree) => `
-                <div class="match-card" onclick="${isFree ? `showTip('${m.teams}', '${m.tip}')` : `handleVip('${m.teams}', '${m.tip}')`}">
-                    <div class="m-time">${m.status}</div>
+            const renderMatch = (m, isFree) => {
+                let safeTeams = escapeStr(m.teams);
+                let safeTip = escapeStr(m.tip);
+                
+                return `
+                <div class="match-card" onclick="${isFree ? `showTip('${safeTeams}', '${safeTip}')` : `handleVip('${safeTeams}', '${safeTip}')`}">
+                    <div class="m-time">${m.status || 'LIVE'}</div>
                     <div>
-                        <div class="m-teams">${m.teams}</div>
+                        <div class="m-teams">${m.teams || ''}</div>
                         <div style="padding-left:10px;">
                             ${m.load ? `<span class="tag ${!isFree ? 'vip-tag' : ''}">${m.load}</span>` : ''}
                             ${m.info ? `<span class="tag">${m.info}</span>` : ''}
@@ -393,28 +400,27 @@
                     </div>
                     <div class="tip-btn">${isFree ? 'OPEN' : 'VIP'}</div>
                 </div>`;
+            };
 
-            // Result Match Renderer (Matching 3-Column Layout with Auto Colors)
             const renderResult = (m) => {
                 let outcomeLower = (m.outcome || '').toLowerCase();
                 let badgeClass = 'badge-win';
-                let outcomeText = 'WON';
+                let outcomeText = (m.outcome || 'WON').toUpperCase();
 
                 if (outcomeLower.includes('loss') || outcomeLower.includes('lose')) {
                     badgeClass = 'badge-loss';
                     outcomeText = 'LOSS';
                 } else if (outcomeLower.includes('draw') || outcomeLower.includes('no loss')) {
                     badgeClass = 'badge-draw';
-                    outcomeText = m.outcome.toUpperCase();
                 }
 
                 return `
                 <div class="match-card">
                     <div class="m-time" style="color:#777;">END</div>
                     <div>
-                        <div class="m-teams">${m.teams}</div>
+                        <div class="m-teams">${m.teams || ''}</div>
                         <div style="padding-left:10px;">
-                            <span class="tag" style="border-color:var(--theme-color); color:var(--theme-color);">Tip: ${m.tip}</span>
+                            <span class="tag" style="border-color:var(--theme-color); color:var(--theme-color);">Tip: ${m.tip || ''}</span>
                         </div>
                     </div>
                     <div class="res-badge ${badgeClass}">${outcomeText}</div>
@@ -429,20 +435,39 @@
         }
 
         async function loadData() {
+            const timestamp = new Date().getTime();
             try {
-                const res = await fetch('matches.json?v=' + new Date().getTime());
-                const data = await res.json();
-                if(data.vip_config && data.vip_config.current_pin) {
-                    correctVipPin = data.vip_config.current_pin;
-                }
-                renderMatches(data);
+                // Fetch PIN Code from pin.json
+                fetch('pin.json?v=' + timestamp)
+                    .then(r => r.json())
+                    .then(data => { if(data.vip_pin) correctVipPin = String(data.vip_pin); })
+                    .catch(() => {});
+
+                // Fetching all match JSON files in parallel
+                const [freeRes, footRes, cricRes, tenRes, resRes] = await Promise.all([
+                    fetch('freetips.json?v=' + timestamp).then(r => r.json()).catch(() => []),
+                    fetch('football.json?v=' + timestamp).then(r => r.json()).catch(() => []),
+                    fetch('cricket.json?v=' + timestamp).then(r => r.json()).catch(() => []),
+                    fetch('tennis.json?v=' + timestamp).then(r => r.json()).catch(() => []),
+                    fetch('results.json?v=' + timestamp).then(r => r.json()).catch(() => [])
+                ]);
+
+                const combinedData = {
+                    freetips: Array.isArray(freeRes) ? freeRes : [],
+                    football: Array.isArray(footRes) ? footRes : [],
+                    cricket: Array.isArray(cricRes) ? cricRes : [],
+                    tennis: Array.isArray(tenRes) ? tenRes : [],
+                    results: Array.isArray(resRes) ? resRes : []
+                };
+
+                renderMatches(combinedData);
             } catch (e) {
-                console.log("Loading fallback...");
+                console.log("Data loading error:", e);
             }
         }
 
         function verifyLogin() { 
-            let inputPin = document.getElementById('vipCode').value;
+            let inputPin = document.getElementById('vipCode').value.trim();
             if(inputPin === correctVipPin) { 
                 isVip = true; 
                 document.body.classList.add('vip-active');
