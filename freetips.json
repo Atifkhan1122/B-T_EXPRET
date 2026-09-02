@@ -1,8 +1,47 @@
 [
   {
-    "teams": "Pakistan vs India",
-    "tip": "Pakistan Win",
-    "time": "7:00 PM",
-    "league": "Asia Cup"
+    "teams": "AEL Larissa vs Olympiacos",
+    "tip": "OLYMPIACOS",
+    "odds": "1.24",
+    "country": "Greece",
+    "flag": "🇬🇷",
+    "date": "02 September",
+    "info": "🇬🇷 Greece, 02 September"
+  },
+  {
+    "teams": "Falkirk vs Rangers",
+    "tip": "OVER 1.5",
+    "odds": "1.20",
+    "country": "Scotland",
+    "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+    "date": "02 September",
+    "info": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland, 02 September"
+  },
+  {
+    "teams": "Celtic vs Aberdeen",
+    "tip": "CELTIC",
+    "odds": "1.28",
+    "country": "Scotland",
+    "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+    "date": "02 September",
+    "info": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland, 02 September"
+  },
+  {
+    "teams": "St. Truiden vs Royale Union SG",
+    "tip": "X2",
+    "odds": "1.29",
+    "country": "Belgium",
+    "flag": "🇧🇪",
+    "date": "02 September",
+    "info": "🇧🇪 Belgium, 02 September"
+  },
+  {
+    "teams": "West Ham vs Wolves",
+    "tip": "4 - 2",
+    "odds": "N/A",
+    "country": "",
+    "flag": "",
+    "date": "",
+    "info": "Result / Live"
   }
 ]
