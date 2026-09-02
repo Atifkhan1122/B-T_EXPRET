@@ -22,21 +22,18 @@
             --theme-color: #ffd700;
         }
         
-        body.vip-active {
-            --theme-color: #00e676;
-        }
-
+        body.vip-active { --theme-color: #00e676; }
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body { margin: 0; font-family: 'Poppins', sans-serif; background: var(--bg-gradient); background-attachment: fixed; color: #ffffff; overflow-x: hidden; touch-action: pan-y; }
 
         /* Navbar */
         nav { background: rgba(0,0,0,0.95); padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--theme-color); position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); transition: 0.4s; }
         .nav-left { display: flex; align-items: center; gap: 12px; }
-        .menu-toggle { font-size: 22px; color: var(--theme-color); cursor: pointer; transition: 0.3s; }
+        .menu-toggle { font-size: 22px; color: var(--theme-color); cursor: pointer; }
         
         .brand-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
         .logo-text { font-weight: 800; font-size: 15px; text-transform: uppercase; letter-spacing: 1px; }
-        .logo-text .bt { color: var(--theme-color); transition: 0.4s; }
+        .logo-text .bt { color: var(--theme-color); }
         .logo-text .expert { color: #ffffff; }
 
         /* Side Navigation Drawer */
@@ -44,7 +41,7 @@
         .side-drawer.open { left: 0; }
         .drawer-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 15px; border-bottom: 1px solid #333; margin-bottom: 10px; }
         .close-drawer { font-size: 22px; color: #fff; cursor: pointer; }
-        .drawer-item { display: flex; align-items: center; gap: 12px; padding: 12px 15px; border-radius: 10px; background: var(--inactive-btn); color: #ccc; font-size: 13px; font-weight: 700; cursor: pointer; transition: 0.2s; border: 1px solid #222; }
+        .drawer-item { display: flex; align-items: center; gap: 12px; padding: 12px 15px; border-radius: 10px; background: var(--inactive-btn); color: #ccc; font-size: 13px; font-weight: 700; cursor: pointer; border: 1px solid #222; }
         .drawer-item i { font-size: 18px; color: var(--theme-color); width: 22px; text-align: center; }
         .drawer-item.active { background: linear-gradient(145deg, var(--theme-color), #00a855); color: #000; border-color: #fff; }
         .drawer-item.active i { color: #000; }
@@ -53,40 +50,34 @@
 
         .container { padding: 15px; max-width: 600px; margin: auto; }
 
-        /* Search Bar */
-        .search-box { width: 100%; padding: 12px 15px; border-radius: 12px; background: #121212; border: 1px solid #333; color: #fff; margin-bottom: 15px; font-size: 13px; outline: none; transition: 0.3s; }
-        .search-box:focus { border-color: var(--theme-color); box-shadow: 0 0 10px rgba(0,230,118,0.2); }
+        .search-box { width: 100%; padding: 12px 15px; border-radius: 12px; background: #121212; border: 1px solid #333; color: #fff; margin-bottom: 15px; font-size: 13px; outline: none; }
+        .search-box:focus { border-color: var(--theme-color); }
 
         /* Match Cards */
-        .match-card { background: var(--card-bg); border-radius: 16px; padding: 16px; margin-bottom: 12px; display: grid; grid-template-columns: 75px 1fr 85px; align-items: center; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 6px 14px rgba(0,0,0,0.4); transition: transform 0.2s; cursor: pointer; }
-        .match-card:active { transform: scale(0.98); }
+        .match-card { background: var(--card-bg); border-radius: 16px; padding: 16px; margin-bottom: 12px; display: grid; grid-template-columns: 75px 1fr 85px; align-items: center; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 6px 14px rgba(0,0,0,0.4); cursor: pointer; }
         .m-time { font-size: 11px; font-weight: 800; color: var(--theme-color); text-align: center; border-right: 1.5px solid #333; padding-right: 8px; }
         .m-teams { font-weight: 600; font-size: 13.5px; color: #f0f0f0; padding: 0 10px; line-height: 1.35; }
         .tag { font-size: 8px; background: rgba(255,255,255,0.05); color: #ccc; padding: 3px 7px; border-radius: 6px; border: 0.5px solid #444; font-weight: bold; margin-right: 4px; display: inline-block; margin-top: 4px; }
         .tag.vip-tag { border-color: var(--theme-color); color: var(--theme-color); }
 
-        /* Buttons & Badges */
         .tip-btn { background: linear-gradient(180deg, var(--gold), var(--dark-gold)); color: #000; font-weight: 800; font-size: 10px; padding: 10px 4px; border-radius: 10px; text-align: center; border: 1px solid #fff; cursor: pointer; text-transform: uppercase; }
         body.vip-active .tip-btn { background: linear-gradient(180deg, #00e676, #00a855); }
 
-        .res-badge { font-size: 10px; font-weight: 900; padding: 10px 4px; border-radius: 10px; text-align: center; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 3px 8px rgba(0,0,0,0.3); }
+        .res-badge { font-size: 10px; font-weight: 900; padding: 10px 4px; border-radius: 10px; text-align: center; text-transform: uppercase; }
         .badge-win { background: linear-gradient(180deg, #00e676, #00a855); color: #000; border: 1px solid #fff; }
         .badge-loss { background: linear-gradient(180deg, #ff5252, #c62828); color: #fff; border: 1px solid #ff8a80; }
         .badge-draw { background: linear-gradient(180deg, #ffb300, #ff8f00); color: #000; border: 1px solid #fff; }
 
         /* Modals */
         .modal { display: none; position: fixed; z-index: 7000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); backdrop-filter: blur(8px); }
-        .modal-content { background: #1a1a1a; border: 2px solid var(--theme-color); width: 88%; max-width: 360px; margin: 25% auto; padding: 25px; border-radius: 25px; text-align: center; animation: modalPop 0.3s ease-out; }
-        @keyframes modalPop { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .modal-content { background: #1a1a1a; border: 2px solid var(--theme-color); width: 88%; max-width: 360px; margin: 25% auto; padding: 25px; border-radius: 25px; text-align: center; }
 
-        /* Floating WhatsApp Button */
         .whatsapp-container { position: fixed; bottom: 20px; right: 15px; display: flex; align-items: center; z-index: 4000; }
-        .whatsapp-float { background: #25d366; width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.6); }
-        .whatsapp-text { background: rgba(0, 0, 0, 0.9); border: 1px solid var(--theme-color); color: var(--theme-color); padding: 6px 12px; border-radius: 20px; font-size: 10px; font-weight: 800; margin-right: 8px; white-space: nowrap; box-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+        .whatsapp-float { background: #25d366; width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; text-decoration: none; }
+        .whatsapp-text { background: rgba(0, 0, 0, 0.9); border: 1px solid var(--theme-color); color: var(--theme-color); padding: 6px 12px; border-radius: 20px; font-size: 10px; font-weight: 800; margin-right: 8px; }
 
         .window-content { display: none; }
-        .window-content.active { display: block; animation: fadeInUp 0.4s ease-out; }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .window-content.active { display: block; }
 
         /* Calculator Styles */
         .calc-card { background: var(--card-bg); padding: 18px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 15px; }
@@ -108,13 +99,11 @@
         .calc-table th, .calc-table td { padding: 6px; border-bottom: 1px solid #333; color: #ccc; }
         .calc-table th { color: var(--theme-color); background: #000; }
 
-        /* Contact Admin Card */
         .admin-card { background: var(--card-bg); border-radius: 16px; padding: 22px; border: 1px solid var(--theme-color); text-align: center; margin-bottom: 20px; }
         .admin-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #25d366; color: #fff; text-decoration: none; padding: 12px 20px; border-radius: 10px; font-weight: 800; font-size: 13px; width: 100%; margin-top: 15px; }
 
-        /* Install App Box */
-        .install-box { background: linear-gradient(135deg, #1f1f1f, #0d0d0d); border: 1px solid var(--theme-color); border-radius: 14px; padding: 12px 15px; margin-bottom: 15px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
-        .install-btn-nav { background: var(--theme-color); color: #000; border: none; padding: 8px 14px; border-radius: 8px; font-weight: 800; font-size: 11px; cursor: pointer; display: flex; align-items: center; gap: 5px; }
+        .install-box { background: linear-gradient(135deg, #1f1f1f, #0d0d0d); border: 1px solid var(--theme-color); border-radius: 14px; padding: 12px 15px; margin-bottom: 15px; display: flex; align-items: center; justify-content: space-between; }
+        .install-btn-nav { background: var(--theme-color); color: #000; border: none; padding: 8px 14px; border-radius: 8px; font-weight: 800; font-size: 11px; cursor: pointer; }
         .no-data { text-align: center; color: #888; font-size: 12px; padding: 20px; }
     </style>
 </head>
@@ -122,6 +111,7 @@
 
     <div class="overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
     
+    <!-- Navigation Drawer -->
     <div class="side-drawer" id="sideDrawer">
         <div class="drawer-header">
             <div class="brand-logo">
@@ -139,6 +129,7 @@
         <div class="drawer-item" onclick="selectSection('contact', 6)"><i class="fab fa-whatsapp"></i> CONTACT ADMIN</div>
     </div>
 
+    <!-- Modals -->
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <h3 style="color:var(--theme-color)">VIP UNLOCK</h3>
@@ -188,6 +179,7 @@
         </div>
     </div>
 
+    <!-- Top Navigation -->
     <nav>
         <div class="nav-left">
             <i class="fas fa-bars menu-toggle" onclick="toggleDrawer()"></i>
@@ -201,6 +193,7 @@
         </div>
     </nav>
 
+    <!-- Main Content Area -->
     <div class="container">
         <input type="text" class="search-box" id="matchSearch" placeholder="🔍 Search Team or Match..." onkeyup="filterMatches()">
 
@@ -219,6 +212,7 @@
         <div id="cricket" class="window-content"></div>
         <div id="tennis" class="window-content"></div>
 
+        <!-- Calculator Section -->
         <div id="calculator" class="window-content">
             <div class="calc-card">
                 <h4 style="color:var(--theme-color); text-align:center; margin-bottom:10px;">Format & Teams</h4>
@@ -330,6 +324,7 @@
 
         <div id="results" class="window-content"><div id="resultsList"></div></div>
 
+        <!-- Contact Admin Section -->
         <div id="contact" class="window-content">
             <div class="admin-card">
                 <i class="fab fa-whatsapp" style="font-size: 50px; color: #25d366; margin-bottom: 10px;"></i>
@@ -352,7 +347,7 @@
     <script>
         let isVip = false;
         let currentIdx = 0;
-        let correctVipPin = "7890"; // Fallback PIN
+        let correctVipPin = "7890";
         let deferredPrompt = null;
 
         function toggleDrawer() {
@@ -367,7 +362,7 @@
 
         function escapeStr(str) {
             if (!str) return '';
-            return str.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+            return String(str).replace(/'/g, "\\'").replace(/"/g, '&quot;');
         }
 
         function renderMatches(data) {
@@ -443,34 +438,35 @@
 
         async function fetchSafeJSON(filename) {
             try {
-                const timestamp = new Date().getTime();
-                const res = await fetch(`${filename}?v=${timestamp}`);
+                // Unique timestamp added to avoid caching issues on GitHub Pages/Vercel
+                const cacheBuster = `nocache=${Math.random().toString(36).substring(7)}_${new Date().getTime()}`;
+                const res = await fetch(`${filename}?${cacheBuster}`, { cache: "no-store" });
                 if (!res.ok) return [];
                 const data = await res.json();
-                return Array.isArray(data) ? data : (data.matches || data.data || []);
+                if (Array.isArray(data)) return data;
+                return data.matches || data.freetips || data.data || [];
             } catch (e) {
-                console.warn(`Failed to fetch ${filename}:`, e);
+                console.warn(`Failed fetching ${filename}:`, e);
                 return [];
             }
         }
 
         async function loadData() {
-            const timestamp = new Date().getTime();
-            
-            // Load PIN
+            // Load Fresh PIN
             try {
-                const pinRes = await fetch(`pin.json?v=${timestamp}`);
+                const pinBuster = `nocache=${Math.random().toString(36).substring(7)}_${new Date().getTime()}`;
+                const pinRes = await fetch(`pin.json?${pinBuster}`, { cache: "no-store" });
                 if (pinRes.ok) {
                     const pinData = await pinRes.json();
-                    if (pinData && pinData.vip_pin) {
-                        correctVipPin = String(pinData.vip_pin);
+                    if (pinData) {
+                        correctVipPin = String(pinData.vip_pin || pinData.pin || pinData.code || "7890");
                     }
                 }
             } catch (e) {
-                console.log("PIN Fetch failed:", e);
+                console.log("PIN Fetch issue:", e);
             }
 
-            // Load all json files matching GitHub screenshot file names exactly
+            // Fetch JSON data dynamically
             const [freeRes, footRes, cricRes, tenRes, resRes] = await Promise.all([
                 fetchSafeJSON('freetips.json'),
                 fetchSafeJSON('football.json'),
@@ -479,20 +475,18 @@
                 fetchSafeJSON('results.json')
             ]);
 
-            const combinedData = {
+            renderMatches({
                 freetips: freeRes,
                 football: footRes,
                 cricket: cricRes,
                 tennis: tenRes,
                 results: resRes
-            };
-
-            renderMatches(combinedData);
+            });
         }
 
         function verifyLogin() { 
             let inputPin = document.getElementById('vipCode').value.trim();
-            if(inputPin === correctVipPin) { 
+            if(inputPin === String(correctVipPin).trim()) { 
                 isVip = true; 
                 document.body.classList.add('vip-active');
                 document.getElementById('vipStatus').innerHTML = '<i class="fas fa-check-circle"></i> VIP UNLOCKED'; 
@@ -531,7 +525,7 @@
         function showTip(t, p) { document.getElementById('popTeams').innerText = t; document.getElementById('popTip').innerText = p; openModal('tipModal'); }
         function handleVip(t, p) { if(isVip) showTip(t, p); else openModal('loginModal'); }
 
-        /* Calculator Functions */
+        /* Calculator Logic */
         let pnlA = 0, pnlB = 0, sessionYesPnL = 0, sessionNoPnL = 0;
         const oversFormatMap = {
             'T20': ['6 Over Session', '10 Over Session', '15 Over Session', '20 Over Session (Lambee)'],
