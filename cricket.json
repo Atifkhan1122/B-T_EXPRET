@@ -32,14 +32,6 @@
     "info": "International T20"
   },
   {
-    "teams": "England W vs Ireland W",
-    "status": "19:30 PKT",
-    "odds": "1.22",
-    "tip": "England W To Win",
-    "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    "info": "Women's ODI Series"
-  },
-  {
     "teams": "Guyana Amazon Warriors vs Jamaica Tallawahs",
     "status": "LIVE",
     "odds": "1.72",
@@ -54,14 +46,6 @@
     "tip": "Jamaica Tallawahs W To Win",
     "flag": "🇯🇲",
     "info": "Women's WCPL"
-  },
-  {
-    "teams": "Hong Kong W vs India W",
-    "status": "LIVE",
-    "odds": "1.05",
-    "tip": "India W To Win",
-    "flag": "🇮🇳",
-    "info": "Women's Asia Cup"
   },
   {
     "teams": "Namibia vs Zimbabwe",
@@ -86,13 +70,5 @@
     "tip": "St Lucia Kings To Win",
     "flag": "🇱🇨",
     "info": "CPL T20"
-  },
-  {
-    "teams": "United Arab Emirates W vs Indonesia W",
-    "status": "LIVE",
-    "odds": "1.30",
-    "tip": "UAE W To Win",
-    "flag": "🇦🇪",
-    "info": "ICC Women's T20 Qualifier"
   }
 ]
