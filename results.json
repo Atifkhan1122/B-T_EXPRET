@@ -1,32 +1,90 @@
 [
   {
-    "teams": "Torino vs Monza",
-    "tip": "1X",
+    "teams": "AEL Larissa vs Olympiacos",
+    "tip": "OLYMPIACOS",
+    "result": "WIN",
+    "outcome": "WON",
+    "score": "0-4",
+    "odds": "1.24",
+    "flag": "🇬🇷",
+    "country": "Greece",
+    "date": "02 September"
+  },
+  {
+    "teams": "Falkirk vs Rangers",
+    "tip": "OVER 1.5",
+    "result": "WIN",
+    "outcome": "WON",
+    "score": "1-2",
+    "odds": "1.20",
+    "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+    "country": "Scotland",
+    "date": "02 September"
+  },
+  {
+    "teams": "Celtic vs Aberdeen",
+    "tip": "CELTIC",
+    "result": "WIN",
+    "outcome": "WON",
+    "score": "3-0",
+    "odds": "1.28",
+    "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+    "country": "Scotland",
+    "date": "02 September"
+  },
+  {
+    "teams": "St. Truiden vs Royale Union SG",
+    "tip": "X2",
+    "result": "WIN",
+    "outcome": "WON",
+    "score": "0-3",
+    "odds": "1.29",
+    "flag": "🇧🇪",
+    "country": "Belgium",
+    "date": "02 September"
+  },
+  {
+    "teams": "Minerul Lupeni vs UTA Arad",
+    "tip": "UTA ARAD",
+    "result": "WIN",
+    "outcome": "WON",
+    "score": "0-3",
+    "odds": "1.54",
+    "flag": "🇷🇴",
+    "country": "Romania",
+    "date": "02 September"
+  },
+  {
+    "teams": "H. Beer Sheva vs H. Haifa",
+    "tip": "H.BEER SHEVA",
     "result": "LOSS",
     "outcome": "LOSS",
-    "score": "0-1",
-    "time": "19:00",
-    "odds": "1.20",
-    "league": "Italy - Coppa Italia - 1/16-finals"
+    "score": "2-2",
+    "odds": "1.44",
+    "flag": "🇮🇱",
+    "country": "Israel",
+    "date": "02 September"
   },
   {
-    "teams": "Zrinjski vs BSK Banja Luka",
-    "tip": "1",
+    "teams": "West Brom vs Charlton",
+    "tip": "OVER 1.5",
     "result": "WIN",
     "outcome": "WON",
-    "score": "3-1",
-    "time": "18:45",
+    "score": "1-1",
+    "odds": "1.37",
+    "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "country": "England",
+    "date": "02 September"
+  },
+  {
+    "teams": "Slavia Sofia vs Levski Sofia",
+    "tip": "LEVSKI",
+    "result": "WIN",
+    "outcome": "WON",
+    "score": "1-2",
     "odds": "1.32",
-    "league": "Bosnia and Herzegovina - Premijer Liga"
-  },
-  {
-    "teams": "Wolfsberger AC vs LASK",
-    "tip": "2",
-    "result": "WIN",
-    "outcome": "WON",
-    "score": "1-3",
-    "time": "17:30",
-    "odds": "1.50",
-    "league": "Austria - Bundesliga"
+    "flag": "🇧🇬",
+    "country": "Bulgaria",
+    "date": "02 September"
   }
 ]
