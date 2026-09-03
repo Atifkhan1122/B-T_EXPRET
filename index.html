@@ -60,6 +60,18 @@
         .tag { font-size: 8px; background: rgba(255,255,255,0.05); color: #ccc; padding: 3px 7px; border-radius: 6px; border: 0.5px solid #444; font-weight: bold; margin-right: 4px; display: inline-block; margin-top: 4px; }
         .tag.vip-tag { border-color: var(--theme-color); color: var(--theme-color); }
 
+        /* Odds Blur Style for VIP Sections */
+        .odds-blur {
+            filter: blur(5px);
+            user-select: none;
+            transition: filter 0.3s ease;
+        }
+
+        body.vip-active .odds-blur {
+            filter: blur(0px);
+            user-select: auto;
+        }
+
         .tip-btn { background: linear-gradient(180deg, var(--gold), var(--dark-gold)); color: #000; font-weight: 800; font-size: 10px; padding: 10px 4px; border-radius: 10px; text-align: center; border: 1px solid #fff; cursor: pointer; text-transform: uppercase; }
         body.vip-active .tip-btn { background: linear-gradient(180deg, #00e676, #00a855); }
 
@@ -374,13 +386,20 @@
                 let infoStr = m.info || m.league || '';
                 let flagEmoji = m.flag ? m.flag + ' ' : '';
 
+                // Odds Blur implementation for VIP cards
+                let loadTagHtml = '';
+                if (loadStr) {
+                    let blurClass = !isFree ? 'odds-blur' : '';
+                    loadTagHtml = `<span class="tag ${!isFree ? 'vip-tag' : ''} ${blurClass}">${loadStr}</span>`;
+                }
+
                 return `
                 <div class="match-card" onclick="${isFree ? `showTip('${safeTeams}', '${safeTip}')` : `handleVip('${safeTeams}', '${safeTip}')`}">
                     <div class="m-time">${timeStr}</div>
                     <div>
                         <div class="m-teams">${flagEmoji}${safeTeams}</div>
                         <div style="padding-left:10px;">
-                            ${loadStr ? `<span class="tag ${!isFree ? 'vip-tag' : ''}">${loadStr}</span>` : ''}
+                            ${loadTagHtml}
                             ${infoStr ? `<span class="tag">${infoStr}</span>` : ''}
                         </div>
                     </div>
@@ -442,7 +461,6 @@
 
         async function fetchSafeJSON(filename) {
             try {
-                // Unique timestamp added to avoid caching issues on GitHub Pages/Vercel
                 const cacheBuster = `nocache=${Math.random().toString(36).substring(7)}_${new Date().getTime()}`;
                 const res = await fetch(`${filename}?${cacheBuster}`, { cache: "no-store" });
                 if (!res.ok) return [];
@@ -456,7 +474,6 @@
         }
 
         async function loadData() {
-            // Load Fresh PIN
             try {
                 const pinBuster = `nocache=${Math.random().toString(36).substring(7)}_${new Date().getTime()}`;
                 const pinRes = await fetch(`pin.json?${pinBuster}`, { cache: "no-store" });
@@ -470,7 +487,6 @@
                 console.log("PIN Fetch issue:", e);
             }
 
-            // Fetch JSON data dynamically
             const [freeRes, footRes, cricRes, tenRes, resRes] = await Promise.all([
                 fetchSafeJSON('freetips.json'),
                 fetchSafeJSON('football.json'),
