@@ -372,12 +372,13 @@
                 let timeStr = m.status || m.time || 'LIVE';
                 let loadStr = m.load || (m.odds ? 'Odds: ' + m.odds : '');
                 let infoStr = m.info || m.league || '';
+                let flagEmoji = m.flag ? m.flag + ' ' : '';
 
                 return `
                 <div class="match-card" onclick="${isFree ? `showTip('${safeTeams}', '${safeTip}')` : `handleVip('${safeTeams}', '${safeTip}')`}">
                     <div class="m-time">${timeStr}</div>
                     <div>
-                        <div class="m-teams">${safeTeams}</div>
+                        <div class="m-teams">${flagEmoji}${safeTeams}</div>
                         <div style="padding-left:10px;">
                             ${loadStr ? `<span class="tag ${!isFree ? 'vip-tag' : ''}">${loadStr}</span>` : ''}
                             ${infoStr ? `<span class="tag">${infoStr}</span>` : ''}
@@ -399,15 +400,18 @@
                     badgeClass = 'badge-draw';
                 }
 
-                let safeTeams = m.teams || (m.home && m.away ? m.home + " vs " + m.away : 'Match');
+                let safeTeams = escapeStr(m.teams || (m.home && m.away ? m.home + " vs " + m.away : 'Match'));
+                let flagEmoji = m.flag ? m.flag + ' ' : '';
+                let scoreDisplay = m.score ? `<span class="tag" style="border-color:var(--theme-color); color:#fff; font-weight:bold;">FT: ${m.score}</span>` : '';
 
                 return `
                 <div class="match-card">
                     <div class="m-time" style="color:#777;">END</div>
                     <div>
-                        <div class="m-teams">${safeTeams}</div>
-                        <div style="padding-left:10px;">
+                        <div class="m-teams">${flagEmoji}${safeTeams}</div>
+                        <div style="padding-left:10px; margin-top: 4px;">
                             <span class="tag" style="border-color:var(--theme-color); color:var(--theme-color);">Tip: ${m.tip || ''}</span>
+                            ${scoreDisplay}
                         </div>
                     </div>
                     <div class="res-badge ${badgeClass}">${outcomeText}</div>
@@ -595,8 +599,13 @@
 
             let rate = rateVal > 1 ? rateVal / 100 : rateVal;
 
-            if (type === 'YES') { sessionYesPnL += (amount * rate); sessionNoPnL -= amount; } 
-            else { sessionYesPnL -= (amount * rate); sessionNoPnL += (amount * rate); }
+            if (type === 'YES') { 
+                sessionYesPnL += (amount * rate); 
+                sessionNoPnL -= amount; 
+            } else { 
+                sessionYesPnL -= amount; 
+                sessionNoPnL += (amount * rate); 
+            }
 
             updateDisplay('pnlSessionPass', sessionYesPnL);
             updateDisplay('pnlSessionFail', sessionNoPnL);
