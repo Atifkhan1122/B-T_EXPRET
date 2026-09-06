@@ -1,47 +1,42 @@
 [
   {
-    "teams": "Minerul Lupeni vs UTA Arad",
-    "tip": "UTA ARAD",
-    "odds": "1.54",
-    "country": "Romania",
+    "teams": "UTA Arad vs Csikszereda M.Ciuc",
+    "status": "FT (5-1)",
+    "odds": "1.55",
+    "tip": "UTA Arad To Win",
     "flag": "🇷🇴",
-    "date": "02 September",
-    "info": "🇷🇴 Romania, 02 September"
+    "info": "Romania SuperLiga"
   },
   {
-    "teams": "H. Beer Sheva vs H. Haifa",
-    "tip": "H.BEER SHEVA",
-    "odds": "1.44",
-    "country": "Israel",
-    "flag": "🇮🇱",
-    "date": "02 September",
-    "info": "🇮🇱 Israel, 02 September"
+    "teams": "Haugesund vs Sogndal",
+    "status": "FT (2-0)",
+    "odds": "1.30",
+    "tip": "Haugesund To Win",
+    "flag": "🇳🇴",
+    "info": "Norway Division 1"
   },
   {
-    "teams": "West Brom vs Charlton",
-    "tip": "OVER 1.5",
+    "teams": "Stabaek vs Moss",
+    "status": "FT (2-3)",
+    "odds": "1.36",
+    "tip": "Stabaek To Win",
+    "flag": "🇳🇴",
+    "info": "Norway Division 1"
+  },
+  {
+    "teams": "Dalian Yingbo vs Qingdao Hainiu",
+    "status": "05 September",
     "odds": "1.37",
-    "country": "England",
-    "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    "date": "02 September",
-    "info": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 England, 02 September"
+    "tip": "Dalian Yingbo To Win",
+    "flag": "🇨🇳",
+    "info": "China League"
   },
   {
-    "teams": "Slavia Sofia vs Levski Sofia",
-    "tip": "LEVSKI",
-    "odds": "1.32",
-    "country": "Bulgaria",
-    "flag": "🇧🇬",
-    "date": "02 September",
-    "info": "🇧🇬 Bulgaria, 02 September"
-  },
-  {
-    "teams": "Birmingham vs Southampton",
-    "tip": "1 - 1",
-    "odds": "N/A",
-    "country": "",
-    "flag": "",
-    "date": "",
-    "info": "Result / Live"
+    "teams": "Al Ittihad FC vs Al Nassr Riyadh",
+    "status": "FT (2-1)",
+    "odds": "1.55",
+    "tip": "Al Nassr Riyadh To Win",
+    "flag": "🇸🇦",
+    "info": "Saudi Pro League"
   }
 ]
