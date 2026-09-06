@@ -1,42 +1,34 @@
 [
   {
-    "teams": "UTA Arad vs Csikszereda M.Ciuc",
-    "status": "FT (5-1)",
-    "odds": "1.55",
-    "tip": "UTA Arad To Win",
+    "teams": "CSM Olimpia Satu Mare vs Politehnica Timisoara",
+    "status": "06 September",
+    "odds": "1.56",
+    "tip": "Politehnica Timisoara",
     "flag": "🇷🇴",
-    "info": "Romania SuperLiga"
+    "info": "Romania"
   },
   {
-    "teams": "Haugesund vs Sogndal",
-    "status": "FT (2-0)",
-    "odds": "1.30",
-    "tip": "Haugesund To Win",
-    "flag": "🇳🇴",
-    "info": "Norway Division 1"
+    "teams": "Otelul Galati vs Rapid Bucharest",
+    "status": "06 September",
+    "odds": "1.39",
+    "tip": "X2",
+    "flag": "🇷🇴",
+    "info": "Romania"
   },
   {
-    "teams": "Stabaek vs Moss",
-    "status": "FT (2-3)",
-    "odds": "1.36",
-    "tip": "Stabaek To Win",
-    "flag": "🇳🇴",
-    "info": "Norway Division 1"
+    "teams": "Rudes vs Hajduk Split",
+    "status": "06 September",
+    "odds": "1.31",
+    "tip": "Hajduk Split",
+    "flag": "🇭🇷",
+    "info": "Croatia"
   },
   {
-    "teams": "Dalian Yingbo vs Qingdao Hainiu",
-    "status": "05 September",
-    "odds": "1.37",
-    "tip": "Dalian Yingbo To Win",
-    "flag": "🇨🇳",
-    "info": "China League"
-  },
-  {
-    "teams": "Al Ittihad FC vs Al Nassr Riyadh",
-    "status": "FT (2-1)",
-    "odds": "1.55",
-    "tip": "Al Nassr Riyadh To Win",
-    "flag": "🇸🇦",
-    "info": "Saudi Pro League"
+    "teams": "Lok.Sofia vs Ludogorets",
+    "status": "06 September",
+    "odds": "1.54",
+    "tip": "Ludogorets",
+    "flag": "🇧🇬",
+    "info": "Bulgaria"
   }
 ]
