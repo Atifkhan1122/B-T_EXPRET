@@ -60,14 +60,14 @@
         .tag { font-size: 8px; background: rgba(255,255,255,0.05); color: #ccc; padding: 3px 7px; border-radius: 6px; border: 0.5px solid #444; font-weight: bold; margin-right: 4px; display: inline-block; margin-top: 4px; }
         .tag.vip-tag { border-color: var(--theme-color); color: var(--theme-color); }
 
-        /* Odds Blur Style for VIP Sections */
-        .odds-blur {
+        /* Odds & Teams Blur Style for VIP Sections */
+        .odds-blur, .team-blur {
             filter: blur(5px);
             user-select: none;
             transition: filter 0.3s ease;
         }
 
-        body.vip-active .odds-blur {
+        body.vip-active .odds-blur, body.vip-active .team-blur {
             filter: blur(0px);
             user-select: auto;
         }
@@ -485,6 +485,9 @@
                 let infoStr = m.info || m.league || '';
                 let flagEmoji = m.flag ? m.flag + ' ' : '';
 
+                // Teams Name Blur Class for VIP Cards
+                let teamBlurClass = !isFree ? 'team-blur' : '';
+
                 // Odds Blur implementation for VIP cards
                 let loadTagHtml = '';
                 if (loadStr) {
@@ -496,7 +499,7 @@
                 <div class="match-card" onclick="${isFree ? `showTip('${safeTeams}', '${safeTip}')` : `handleVip('${safeTeams}', '${safeTip}')`}">
                     <div class="m-time">${timeStr}</div>
                     <div>
-                        <div class="m-teams">${flagEmoji}${safeTeams}</div>
+                        <div class="m-teams ${teamBlurClass}">${flagEmoji}${safeTeams}</div>
                         <div style="padding-left:10px;">
                             ${loadTagHtml}
                             ${infoStr ? `<span class="tag">${infoStr}</span>` : ''}
