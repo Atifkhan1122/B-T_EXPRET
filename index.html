@@ -54,68 +54,15 @@
         .search-box:focus { border-color: var(--theme-color); }
 
         /* Match Cards */
-        .match-card { background: var(--card-bg); border-radius: 16px; padding: 16px; margin-bottom: 12px; display: grid; grid-template-columns: 75px 1fr 85px; align-items: center; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 6px 14px rgba(0,0,0,0.4); cursor: pointer; }
+        .match-card { background: var(--card-bg); border-radius: 16px; padding: 16px; margin-bottom: 12px; display: grid; grid-template-columns: 75px 1fr 85px; align-items: center; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 6px 14px rgba(0,0,0,0.4); }
         .m-time { font-size: 11px; font-weight: 800; color: var(--theme-color); text-align: center; border-right: 1.5px solid #333; padding-right: 8px; }
         .m-teams { font-weight: 600; font-size: 13.5px; color: #f0f0f0; padding: 0 10px; line-height: 1.35; }
         .tag { font-size: 8px; background: rgba(255,255,255,0.05); color: #ccc; padding: 3px 7px; border-radius: 6px; border: 0.5px solid #444; font-weight: bold; margin-right: 4px; display: inline-block; margin-top: 4px; }
-        .tag.vip-tag { border-color: var(--theme-color); color: var(--theme-color); }
-
-        /* Odds & Teams Blur Style for VIP Sections */
-        .odds-blur, .team-blur {
-            filter: blur(5px);
-            user-select: none;
-            transition: filter 0.3s ease;
-        }
-
-        body.vip-active .odds-blur, body.vip-active .team-blur {
-            filter: blur(0px);
-            user-select: auto;
-        }
 
         .tip-btn { background: linear-gradient(180deg, var(--gold), var(--dark-gold)); color: #000; font-weight: 800; font-size: 10px; padding: 10px 4px; border-radius: 10px; text-align: center; border: 1px solid #fff; cursor: pointer; text-transform: uppercase; }
-        body.vip-active .tip-btn { background: linear-gradient(180deg, #00e676, #00a855); }
-
-        .res-badge { font-size: 10px; font-weight: 900; padding: 10px 4px; border-radius: 10px; text-align: center; text-transform: uppercase; }
-        .badge-win { background: linear-gradient(180deg, #00e676, #00a855); color: #000; border: 1px solid #fff; }
-        .badge-loss { background: linear-gradient(180deg, #ff5252, #c62828); color: #fff; border: 1px solid #ff8a80; }
-        .badge-draw { background: linear-gradient(180deg, #ffb300, #ff8f00); color: #000; border: 1px solid #fff; }
-
-        /* Modals */
-        .modal { display: none; position: fixed; z-index: 7000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); backdrop-filter: blur(8px); }
-        .modal-content { background: #1a1a1a; border: 2px solid var(--theme-color); width: 88%; max-width: 360px; margin: 25% auto; padding: 25px; border-radius: 25px; text-align: center; }
-
-        .whatsapp-container { position: fixed; bottom: 20px; right: 15px; display: flex; align-items: center; z-index: 4000; }
-        .whatsapp-float { background: #25d366; width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; text-decoration: none; }
-        .whatsapp-text { background: rgba(0, 0, 0, 0.9); border: 1px solid var(--theme-color); color: var(--theme-color); padding: 6px 12px; border-radius: 20px; font-size: 10px; font-weight: 800; margin-right: 8px; }
 
         .window-content { display: none; }
         .window-content.active { display: block; }
-
-        /* Calculator Styles */
-        .calc-card { background: var(--card-bg); padding: 18px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 15px; }
-        .calc-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .calc-group { margin-bottom: 12px; }
-        .calc-group label { display: block; font-size: 11px; color: var(--theme-color); margin-bottom: 4px; font-weight: bold; }
-        .calc-group input, .calc-group select { width: 100%; padding: 10px; border: 1px solid #333; background: #000; color: #fff; border-radius: 8px; font-size: 13px; outline: none; }
-        .calc-btn-group { display: flex; gap: 10px; margin-top: 10px; }
-        .calc-btn { flex: 1; padding: 10px; border: none; border-radius: 8px; font-size: 12px; font-weight: bold; cursor: pointer; color: white; }
-        .btn-l { background-color: var(--win); color: #000; }
-        .btn-k { background-color: var(--loss); }
-        .btn-s { background-color: #0284c7; }
-        .btn-w { background-color: var(--theme-color); color: #000; }
-        .book-box { background: #0a0a0a; padding: 12px; border-radius: 8px; margin-top: 12px; border: 1px solid #333; }
-        .book-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #222; font-size: 13px; font-weight: bold; }
-        .c-profit { color: var(--win); }
-        .c-loss { color: var(--loss); }
-        .calc-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 11px; text-align: left; }
-        .calc-table th, .calc-table td { padding: 6px; border-bottom: 1px solid #333; color: #ccc; }
-        .calc-table th { color: var(--theme-color); background: #000; }
-
-        .admin-card { background: var(--card-bg); border-radius: 16px; padding: 22px; border: 1px solid var(--theme-color); text-align: center; margin-bottom: 20px; }
-        .admin-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #25d366; color: #fff; text-decoration: none; padding: 12px 20px; border-radius: 10px; font-weight: 800; font-size: 13px; width: 100%; margin-top: 15px; }
-
-        .install-box { background: linear-gradient(135deg, #1f1f1f, #0d0d0d); border: 1px solid var(--theme-color); border-radius: 14px; padding: 12px 15px; margin-bottom: 15px; display: flex; align-items: center; justify-content: space-between; }
-        .install-btn-nav { background: var(--theme-color); color: #000; border: none; padding: 8px 14px; border-radius: 8px; font-weight: 800; font-size: 11px; cursor: pointer; }
         .no-data { text-align: center; color: #888; font-size: 12px; padding: 20px; }
     </style>
 </head>
@@ -142,33 +89,6 @@
         <div class="drawer-item" onclick="selectSection('contact', 7)"><i class="fab fa-whatsapp"></i> CONTACT ADMIN</div>
     </div>
 
-    <!-- Modals -->
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <h3 style="color:var(--theme-color)">VIP UNLOCK</h3>
-            <p style="color:#888; font-size:12px;">Enter current PIN from Admin</p>
-            <input type="password" id="vipCode" style="width:100%; padding:15px; margin:20px 0; border-radius:12px; background:#000; border:1px solid #444; color:#fff; text-align:center; font-size:18px;" placeholder="••••••">
-            <button onclick="verifyLogin()" class="tip-btn" style="width:100%">ACCESS VIP</button>
-        </div>
-    </div>
-
-    <div id="errorModal" class="modal">
-        <div class="modal-content" style="border-color: var(--loss);">
-            <i class="fas fa-times-circle" style="font-size: 50px; color: var(--loss); margin-bottom: 15px;"></i>
-            <h3 style="color:var(--loss); margin:0;">ACCESS DENIED</h3>
-            <p style="color:#ccc; font-size:13px; margin: 15px 0;">Ghalat Pin Code! Naya pin hasil karne ke liye Admin se raabta karein.</p>
-            <button onclick="closeModal('errorModal')" class="tip-btn" style="width:100%; background:var(--loss); color:#fff; border:none;">TRY AGAIN</button>
-        </div>
-    </div>
-
-    <div id="tipModal" class="modal">
-        <div class="modal-content">
-            <h4 id="popTeams" style="color:#fff; margin-bottom:15px;"></h4>
-            <div id="popTip" style="font-size: 22px; color: var(--theme-color); font-weight: 800; margin: 20px 0; padding: 20px; border: 2px dashed var(--theme-color); border-radius: 15px; background: rgba(0,230,118,0.05);">LOCKED</div>
-            <button onclick="closeModal('tipModal')" class="tip-btn" style="width:100%; background:#333; color:#fff; border-color:#555;">CLOSE</button>
-        </div>
-    </div>
-
     <!-- Top Navigation -->
     <nav>
         <div class="nav-left">
@@ -177,9 +97,6 @@
                 <i class="fas fa-crown" style="font-size: 20px; color: var(--theme-color);"></i>
                 <div class="logo-text"><span class="bt">BET PRO</span> <span class="expert">EXPERT</span></div>
             </div>
-        </div>
-        <div id="vipStatus" style="font-size:10px; color:#ff5252; font-weight:900; border:1.5px solid #ff5252; padding:5px 12px; border-radius:20px; cursor:pointer;" onclick="openModal('loginModal')">
-            <i class="fas fa-lock"></i> VIP LOCKED
         </div>
     </nav>
 
@@ -193,15 +110,11 @@
         <div id="tennis" class="window-content"></div>
         <div id="cricketCalc" class="window-content"></div>
         <div id="footballCalc" class="window-content"></div>
-        <div id="results" class="window-content"><div id="resultsList"></div></div>
+        <div id="results" class="window-content"></div>
         <div id="contact" class="window-content"></div>
     </div>
 
     <script>
-        let isVip = false;
-        let currentIdx = 2;
-        let correctVipPin = "7890";
-
         function toggleDrawer() {
             document.getElementById('sideDrawer').classList.toggle('open');
             document.getElementById('drawerOverlay').classList.toggle('active');
@@ -213,7 +126,6 @@
         }
 
         function openWindow(id, idx) {
-            currentIdx = idx;
             document.querySelectorAll('.window-content').forEach(w => w.classList.remove('active'));
             document.querySelectorAll('.drawer-item').forEach(d => d.classList.remove('active'));
 
@@ -225,10 +137,43 @@
             }
         }
 
+        // Fetch Cricket Matches from cricket.json
+        async function loadCricketData() {
+            const container = document.getElementById('cricket');
+            try {
+                const response = await fetch('cricket.json');
+                if (!response.ok) throw new Error('Data load nahi ho saka');
+                const matches = await response.json();
+
+                if (matches.length === 0) {
+                    container.innerHTML = '<div class="no-data">Koi matches available nahi hain.</div>';
+                    return;
+                }
+
+                let html = '';
+                matches.forEach(item => {
+                    html += `
+                        <div class="match-card">
+                            <div class="m-time">${item.time}</div>
+                            <div class="m-teams">
+                                <div>${item.teams}</div>
+                                <span class="tag">${item.info}</span>
+                            </div>
+                            <div class="tip-btn">${item.tip}</div>
+                        </div>
+                    `;
+                });
+                container.innerHTML = html;
+            } catch (error) {
+                container.innerHTML = '<div class="no-data">Data load karne me masla aaya. Check karein cricket.json file sahi jagah par hai.</div>';
+            }
+        }
+
         window.onload = () => { 
             openWindow('cricket', 2);
             document.getElementById('sideDrawer').classList.add('open');
             document.getElementById('drawerOverlay').classList.add('active');
+            loadCricketData();
         };
     </script>
 </body>
