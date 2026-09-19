@@ -1,74 +1,26 @@
 [
   {
-    "teams": "Amsterdam Flames vs Glasgow Cosmic",
-    "status": "LIVE",
-    "odds": "1.85",
-    "tip": "Amsterdam Flames To Win",
-    "flag": "🏏",
-    "info": "European T10 League"
+    "teams": "TKR-W vs GAW-W",
+    "time": "17 Sep 11:30 PM",
+    "info": "WCPL 2026"
+    "tip": "TKR-W WIN"
   },
   {
-    "teams": "Bangladesh W vs Sri Lanka W",
-    "status": "LIVE",
-    "odds": "1.65",
-    "tip": "Sri Lanka W To Win",
-    "flag": "🇱🇰",
-    "info": "Women's Asia Cup"
+    "teams": "GAW vs JAM",
+    "time": "19 Sep 4:00 AM",
+    "info": "CPL 2026",
+    "tip": "JAM WIN"
   },
   {
-    "teams": "Barbados Tridents vs Trinbago Knight Riders",
-    "status": "LIVE",
-    "odds": "1.42",
-    "tip": "Trinbago Knight Riders To Win",
-    "flag": "🇹🇹",
-    "info": "CPL T20"
+    "teams": "ZIM-W vs SA-W",
+    "time": "19 Sep 05:00 PM",
+    "info": "SA-W vs ZIM-W 2026" ,
+    "tip": "SA-W WIN"
   },
   {
-    "teams": "England vs Pakistan",
-    "status": "18:00 PKT",
-    "odds": "1.55",
-    "tip": "England To Win",
-    "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    "info": "International T20"
-  },
-  {
-    "teams": "Guyana Amazon Warriors vs Jamaica Tallawahs",
-    "status": "LIVE",
-    "odds": "1.72",
-    "tip": "Guyana Amazon Warriors To Win",
-    "flag": "🇬🇾",
-    "info": "CPL T20"
-  },
-  {
-    "teams": "Guyana Amazon Warriors W vs Jamaica Tallawahs W",
-    "status": "21:00 PKT",
-    "odds": "1.80",
-    "tip": "Jamaica Tallawahs W To Win",
-    "flag": "🇯🇲",
-    "info": "Women's WCPL"
-  },
-  {
-    "teams": "Namibia vs Zimbabwe",
-    "status": "16:00 PKT",
-    "odds": "1.90",
-    "tip": "Zimbabwe To Win",
-    "flag": "🇿🇼",
-    "info": "T20 International"
-  },
-  {
-    "teams": "Rotterdam Dockers vs Edinburgh Castle",
-    "status": "LIVE",
-    "odds": "1.95",
-    "tip": "Edinburgh Castle To Win",
-    "flag": "🏏",
-    "info": "European Cricket League"
-  },
-  {
-    "teams": "St Kitts & Nevis Patriots vs St Lucia Kings",
-    "status": "23:30 PKT",
-    "odds": "1.60",
-    "tip": "St Lucia Kings To Win",
-    "flag": "🇱🇨",
-    "info": "CPL T20"
+    "teams": "ENG vs SL",
+    "time": "LIVE",
+    "info": "SL vs ENG 2026",
+    "tip": "ENG WIN"
   }
 ]
